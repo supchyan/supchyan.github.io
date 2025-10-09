@@ -16,12 +16,12 @@ ex {
 }
 @keyframes expert {
     0% {
-        color: #FF481A
+        color: #1acdff
     }
     50% {
-        color: #ff7d1a
+        color: #1afff4
     }
     100% {
-        color: #FF481A
+        color: #1acdff
     }
 }

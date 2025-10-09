@@ -1,0 +1,46 @@
+#snake {
+    visibility: collapse;
+}
+#score {
+    left: 0;
+    top: 0;
+    position: absolute;
+
+    font-size: 2rem;
+    color: white;
+}
+#player {
+    left: 0;
+    top: 0;
+    position: absolute;
+
+    width: 40px;
+    height: 40px;
+
+    background-color: white;
+}
+#apple {
+    left: 0;
+    top: 0;
+    position: absolute;
+
+    width: 40px;
+    height: 40px;
+
+    animation-name: _apple;
+    animation-duration: 100ms;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes _apple {
+    0% {
+        background-color: #FF481A
+    }
+    50% {
+        background-color: #ffcd1a
+    }
+    100% {
+        background-color: #FF481A
+    }
+}

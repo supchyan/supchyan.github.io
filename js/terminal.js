@@ -1,4 +1,4 @@
-const TERMINAL = document.getElementsByTagName("terminal")[0]
+const TERMINAL = document.getElementById("terminal");
 
 var user_input = "";
 var cool_user_input = ""; // becomes orange, if user typed a proper command word
@@ -13,6 +13,32 @@ var buffer_index = 0;
 var c_tick = 0;
 
 document.onkeydown = ((e) => {
+    // handle different terminal logic while snake game is active
+    if (isGameRunning) {
+        if (e.key == "ArrowUp") {
+            playerUp();
+        }
+        if (e.key == "ArrowDown") {
+            playerDown();
+        }
+        if (e.key == "ArrowLeft") {
+            // something on down
+            playerLeft();
+        }
+        if (e.key == "ArrowRight") {
+            // something on down
+            playerRight();
+        }
+
+        if (e.key.toUpperCase() == "X") {
+             // clear terminal before exiting snake
+            TERMINAL.innerHTML = "";
+            // exit snake
+            stopSnakeGame();
+        }
+        return; // skip stuff below while snake...
+    }
+    
     if (e.key == "Backspace") {
         user_input = user_input.substring(0, user_input.length - 1);
     }
@@ -53,14 +79,16 @@ document.onkeydown = ((e) => {
 msg = MSGS.BACK_MSG;
 
 setInterval(() => {
-    // draw current message buffer + user input
-    TERMINAL.innerHTML = msg + cool_user_input;
+    if (!isGameRunning) { // skip call below while snake is active
+        // draw current message buffer + user input
+        TERMINAL.innerHTML = msg + cool_user_input;
 
-    // add blinking cariage
-    TERMINAL.innerHTML = c_tick % 2 == 0 ? TERMINAL.innerHTML + "_" : TERMINAL.innerHTML;
+        // add blinking cariage
+        TERMINAL.innerHTML = c_tick % 2 == 0 ? TERMINAL.innerHTML + "_" : TERMINAL.innerHTML;
 
-    // affect cariage blink timer
-    c_tick++;
+        // affect cariage blink timer
+        c_tick++;
+    }
 }, 100);
 
 function setMsgByInput(input) {
@@ -70,11 +98,13 @@ function setMsgByInput(input) {
     if (input == COMMANDS.ABOUT) {
         msg = MSGS.ABOUT_MSG;
     }
-    if (input == COMMANDS.PROJECTS) {
-        msg = MSGS.PROJECTS_MSG;
-    }
     if (input == COMMANDS.STATUS) {
         msg = MSGS.STATUS_MSG;
+    }
+    if (input == COMMANDS.SNAKE) {
+        // this is a complicated one, 
+        // so it starts a snake game
+        startSnakeGame();
     }
     
     // push last input to the input buffer

@@ -17,7 +17,7 @@ body {
     background-color: black;
     font-family: 'vcr';
 }
-terminal {
+#terminal {
     width: 100%;
     height: auto;
 
@@ -26,7 +26,7 @@ terminal {
     padding: 3rem;
 
     outline-style: solid;
-    outline-width: 0.5rem;
+    outline-width: 0.3rem;
     outline-color: white;
 
     font-size: 2rem;
