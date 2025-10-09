@@ -21,7 +21,9 @@ function getTime(region) {
         offset = 3;
     }
 
-    const h = new Date().getUTCHours() + offset; // tokyo
+    var h = new Date().getUTCHours() + offset;
+    if (h >= 24) h -= 24; // large UTC+n fix
+
     const m = new Date().getUTCMinutes();
     return `${new String(h).padStart(2, "0")}:${new String(m).padStart(2, "0")}`
 }

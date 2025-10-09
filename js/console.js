@@ -1,12 +1,13 @@
 const TERMINAL = document.getElementsByTagName("terminal")[0]
 
-var user_input   = "";
+var user_input = "";
+var cool_user_input = ""; // becomes orange, if user typed a proper command word
 var msg  = "";
 
 // current input buffer (terminal's up/down logic)
-var buffer          = [];
+var buffer = [];
 // input buffer index
-var buffer_index    = 0;
+var buffer_index = 0;
 
 // cariage blink counter
 var c_tick = 0;
@@ -18,8 +19,10 @@ document.onkeydown = ((e)=>{
     if (e.key == "Enter") {
         // set terminal message by user input
         setMsgByInput(user_input);
+
         // clear user input
         user_input = "";
+        
         // reset input buffer index
         buffer_index = 0;
     }
@@ -43,13 +46,15 @@ document.onkeydown = ((e)=>{
     if (KEYS.includes(e.key.toUpperCase())) {
         user_input += e.key.toUpperCase();
     }
+    updateCoolUserInput();
 });
 
 msg = MSGS.BACK_MSG;
 
 setInterval(() => {
     // draw current message buffer + user input
-    TERMINAL.innerHTML = msg + user_input;
+    TERMINAL.innerHTML = msg + cool_user_input;
+
     // add blinking cariage
     TERMINAL.innerHTML = c_tick % 2 == 0 ? TERMINAL.innerHTML + "_" : TERMINAL.innerHTML;
     // affect cariage blink timer
@@ -57,16 +62,16 @@ setInterval(() => {
 }, 100);
 
 function setMsgByInput(input) {
-    if (input == "BACK") {
+    if (input == COMMANDS.BACK) {
         msg = MSGS.BACK_MSG;
     }
-    if (input == "ABOUT") {
+    if (input == COMMANDS.ABOUT) {
         msg = MSGS.ABOUT_MSG;
     }
-    if (input == "PROJECTS") {
+    if (input == COMMANDS.PROJECTS) {
         msg = MSGS.PROJECTS_MSG;
     }
-    if (input == "STATUS") {
+    if (input == COMMANDS.STATUS) {
         msg = MSGS.STATUS_MSG;
     }
     // push last input to the input buffer
@@ -75,4 +80,13 @@ function setMsgByInput(input) {
 function setUserInputByBufferIndex(index) {
     if (buffer.length > 0)
         user_input = buffer[index];
+}
+
+function updateCoolUserInput() {
+    cool_user_input = user_input;
+    Object.entries(COMMANDS).forEach(el => { // el = arrayof[key, val]
+        if (user_input == el[1]) {
+            cool_user_input = `<o>${user_input}</o>`;
+        }
+    });
 }
