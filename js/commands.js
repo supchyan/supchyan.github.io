@@ -2,5 +2,7 @@ const COMMANDS = {
     BACK: "BACK", 
     STATUS :"STATUS", 
     ABOUT: "ABOUT", 
-    SNAKE: "SNAKE"
+    SNAKE: "SNAKE",
+    KUJIRA: "KUJIRA",
+    EXIT: "EXIT"
 };

@@ -102,9 +102,14 @@ function setMsgByInput(input) {
         msg = MSGS.STATUS_MSG;
     }
     if (input == COMMANDS.SNAKE) {
-        // this is a complicated one, 
-        // so it starts a snake game
         startSnakeGame();
+    }
+    if (input == COMMANDS.KUJIRA) {
+        // just a placeholder, maybe
+        window.location.href = "https://youtu.be/m1IUGdK7X0U?si=MLT8O6iIXqRJn7PY";
+    }
+    if (input == COMMANDS.EXIT) {
+        window.close();
     }
     
     // push last input to the input buffer

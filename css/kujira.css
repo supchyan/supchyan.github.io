@@ -1,0 +1,10 @@
+#kujira {
+    position: absolute;
+
+    width: 10rem;
+    height: 10rem;
+
+    background-image: none;
+
+    pointer-events: none;
+}
