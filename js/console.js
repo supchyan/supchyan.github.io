@@ -58,7 +58,7 @@ setInterval(() => {
 
     // add blinking cariage
     TERMINAL.innerHTML = c_tick % 2 == 0 ? TERMINAL.innerHTML + "_" : TERMINAL.innerHTML;
-    
+
     // affect cariage blink timer
     c_tick++;
 }, 100);
@@ -76,6 +76,7 @@ function setMsgByInput(input) {
     if (input == COMMANDS.STATUS) {
         msg = MSGS.STATUS_MSG;
     }
+    
     // push last input to the input buffer
     buffer.push(input);
 }
