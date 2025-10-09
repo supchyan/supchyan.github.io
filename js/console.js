@@ -12,7 +12,7 @@ var buffer_index = 0;
 // cariage blink counter
 var c_tick = 0;
 
-document.onkeydown = ((e)=>{
+document.onkeydown = ((e) => {
     if (e.key == "Backspace") {
         user_input = user_input.substring(0, user_input.length - 1);
     }
@@ -22,7 +22,7 @@ document.onkeydown = ((e)=>{
 
         // clear user input
         user_input = "";
-        
+
         // reset input buffer index
         buffer_index = 0;
     }
@@ -49,6 +49,7 @@ document.onkeydown = ((e)=>{
     updateCoolUserInput();
 });
 
+// set default (welcome) message here
 msg = MSGS.BACK_MSG;
 
 setInterval(() => {
@@ -57,6 +58,7 @@ setInterval(() => {
 
     // add blinking cariage
     TERMINAL.innerHTML = c_tick % 2 == 0 ? TERMINAL.innerHTML + "_" : TERMINAL.innerHTML;
+    
     // affect cariage blink timer
     c_tick++;
 }, 100);
