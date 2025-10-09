@@ -1,108 +1,78 @@
 const TERMINAL = document.getElementsByTagName("terminal")[0]
 
-const KEYS = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "U",
-    "V",
-    "W",
-    "X",
-    "Y",
-    "Z"
-]
+var user_input   = "";
+var msg  = "";
 
-const MSGS = {
-BACK_MSG: 
-`WELCOME TO SUP<o>0</o> TERMINAL :)
-IT SUPPORTS ONLY ENGLISH CHARACTERS!
+// current input buffer (terminal's up/down logic)
+var buffer          = [];
+// input buffer index
+var buffer_index    = 0;
 
-TYPE <o>1</o> OF SPECIFIED BELOW
-<o>ABOUT</o>, <o>PROJECTS</o>, <o>STATUS</o>
-    
-> `,
-
-ABOUT_MSG: 
-`I'M SUPCHYAN, GAME DEVELOPER AND SOFTWARE ARCHITECT!
-IF YOU WANT TO LEARN ABOUT MY PROJECTS, PLEASE VISIT <o>PROJECTS</o> SECTION.
-
-TYPE <o>BACK</o> TO GET A WELCOME SCREEN
-
-> `,
-
-PROJECTS_MSG: 
-`PROJECTS MESSAGE!
-
-TYPE <o>BACK</o> TO GET A WELCOME SCREEN
-
-> `,
-
-STATUS_MSG: 
-`LOCATION: JAPAN, TOKYO
-LOCAL TIME: 00:00
-STATUS: BUSY
-
-TYPE <o>BACK</o> TO GET A WELCOME SCREEN
-
-> `,
-}
-
-var input = "";
-var buffer = "";
-var tick = 0;
+// cariage blink counter
+var c_tick = 0;
 
 document.onkeydown = ((e)=>{
     if (e.key == "Backspace") {
-        input = input.substring(0, input.length - 1);
-        return;
+        user_input = user_input.substring(0, user_input.length - 1);
     }
     if (e.key == "Enter") {
-        setBufferByInput();
-        return;
+        // set terminal message by user input
+        setMsgByInput(user_input);
+        // clear user input
+        user_input = "";
+        // reset input buffer index
+        buffer_index = 0;
+    }
+    if (e.key == "ArrowUp") {
+        // decrease buffer index
+        if (buffer_index > 0) {
+            buffer_index--;
+        }
+        else if(buffer.length > 0) {
+            buffer_index = buffer.length - 1;
+        }
+
+        setUserInputByBufferIndex(buffer_index);
+    }
+    if (e.key == "ArrowDown") {
+        // increase buffer index
+        buffer_index = (buffer_index < buffer.length - 1) ? buffer_index += 1 : 0;
+
+        setUserInputByBufferIndex(buffer_index);
     }
     if (KEYS.includes(e.key.toUpperCase())) {
-        input += e.key.toUpperCase();
-        return;
+        user_input += e.key.toUpperCase();
     }
 });
 
-buffer = MSGS.BACK_MSG;
+msg = MSGS.BACK_MSG;
 
 setInterval(() => {
-    TERMINAL.innerHTML = buffer + input;
-    TERMINAL.innerHTML = tick % 2 == 0 ? TERMINAL.innerHTML + "_" : TERMINAL.innerHTML;
-    tick++;
+    // draw current message buffer + user input
+    TERMINAL.innerHTML = msg + user_input;
+    // add blinking cariage
+    TERMINAL.innerHTML = c_tick % 2 == 0 ? TERMINAL.innerHTML + "_" : TERMINAL.innerHTML;
+    // affect cariage blink timer
+    c_tick++;
 }, 100);
 
-function setBufferByInput() {
+function setMsgByInput(input) {
     if (input == "BACK") {
-        buffer = MSGS.BACK_MSG;
+        msg = MSGS.BACK_MSG;
     }
     if (input == "ABOUT") {
-        buffer = MSGS.ABOUT_MSG;
+        msg = MSGS.ABOUT_MSG;
     }
     if (input == "PROJECTS") {
-        buffer = MSGS.PROJECTS_MSG;
+        msg = MSGS.PROJECTS_MSG;
     }
     if (input == "STATUS") {
-        buffer = MSGS.STATUS_MSG;
+        msg = MSGS.STATUS_MSG;
     }
-    input = "";
+    // push last input to the input buffer
+    buffer.push(input);
+}
+function setUserInputByBufferIndex(index) {
+    if (buffer.length > 0)
+        user_input = buffer[index];
 }
