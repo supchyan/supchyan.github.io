@@ -1,5 +1,29 @@
+:root {
+    --snake-size: 40px;
+}
 #snake {
     visibility: collapse;
+}
+#tutorial {
+    left: 0;
+    top: 0;
+    position: absolute;
+
+    width: 100vw;
+    height: 100vh;
+
+    font-size: 2rem;
+    color: white;
+    opacity: 50%;
+
+    pointer-events: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    word-break: break-word;
+    white-space: pre-wrap;
 }
 #score {
     left: 0;
@@ -14,33 +38,49 @@
     top: 0;
     position: absolute;
 
-    width: 40px;
-    height: 40px;
+    width: var(--snake-size);
+    height: var(--snake-size);
 
     background-color: white;
+
+    z-index: 3;
+}
+.segment {
+    left: 0;
+    top: 0;
+    position: absolute;
+
+    width: var(--snake-size);
+    height: var(--snake-size);
+
+    background-color: var(--col-y);
+
+    z-index: 1;
 }
 #apple {
     left: 0;
     top: 0;
     position: absolute;
 
-    width: 40px;
-    height: 40px;
+    width: var(--snake-size);
+    height: var(--snake-size);
 
     animation-name: _apple;
     animation-duration: 100ms;
     animation-delay: 0;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+
+    z-index: 2;
 }
 @keyframes _apple {
     0% {
-        background-color: #FF481A
+        background-color: var(--col-o)
     }
     50% {
-        background-color: #ffcd1a
+        background-color: var(--col-y)
     }
     100% {
-        background-color: #FF481A
+        background-color: var(--col-o)
     }
 }

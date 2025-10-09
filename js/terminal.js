@@ -1,16 +1,16 @@
 const TERMINAL = document.getElementById("terminal");
 
-var user_input = "";
-var cool_user_input = ""; // becomes orange, if user typed a proper command word
+var userInput = "";
+var coolUserInput = ""; // becomes orange, if user typed a proper command word
 var msg  = "";
 
 // current input buffer (terminal's up/down logic)
 var buffer = [];
 // input buffer index
-var buffer_index = 0;
+var bufferIndex = 0;
 
 // cariage blink counter
-var c_tick = 0;
+var cTick = 0;
 
 document.onkeydown = ((e) => {
     // handle different terminal logic while snake game is active
@@ -40,37 +40,37 @@ document.onkeydown = ((e) => {
     }
     
     if (e.key == "Backspace") {
-        user_input = user_input.substring(0, user_input.length - 1);
+        userInput = userInput.substring(0, userInput.length - 1);
     }
     if (e.key == "Enter") {
         // set terminal message by user input
-        setMsgByInput(user_input);
+        setMsgByInput(userInput);
 
         // clear user input
-        user_input = "";
+        userInput = "";
 
         // reset input buffer index
-        buffer_index = 0;
+        bufferIndex = 0;
     }
     if (e.key == "ArrowUp") {
         // decrease buffer index
-        if (buffer_index > 0) {
-            buffer_index--;
+        if (bufferIndex > 0) {
+            bufferIndex--;
         }
         else if(buffer.length > 0) {
-            buffer_index = buffer.length - 1;
+            bufferIndex = buffer.length - 1;
         }
 
-        setUserInputByBufferIndex(buffer_index);
+        setUserInputByBufferIndex(bufferIndex);
     }
     if (e.key == "ArrowDown") {
         // increase buffer index
-        buffer_index = (buffer_index < buffer.length - 1) ? buffer_index += 1 : 0;
+        bufferIndex = (bufferIndex < buffer.length - 1) ? bufferIndex += 1 : 0;
 
-        setUserInputByBufferIndex(buffer_index);
+        setUserInputByBufferIndex(bufferIndex);
     }
     if (KEYS.includes(e.key.toUpperCase())) {
-        user_input += e.key.toUpperCase();
+        userInput += e.key.toUpperCase();
     }
     updateCoolUserInput();
 });
@@ -81,13 +81,13 @@ msg = MSGS.BACK_MSG;
 setInterval(() => {
     if (!isGameRunning) { // skip call below while snake is active
         // draw current message buffer + user input
-        TERMINAL.innerHTML = msg + cool_user_input;
+        TERMINAL.innerHTML = msg + coolUserInput;
 
         // add blinking cariage
-        TERMINAL.innerHTML = c_tick % 2 == 0 ? TERMINAL.innerHTML + "_" : TERMINAL.innerHTML;
+        TERMINAL.innerHTML = cTick % 2 == 0 ? TERMINAL.innerHTML + "_" : TERMINAL.innerHTML;
 
         // affect cariage blink timer
-        c_tick++;
+        cTick++;
     }
 }, 100);
 
@@ -112,14 +112,14 @@ function setMsgByInput(input) {
 }
 function setUserInputByBufferIndex(index) {
     if (buffer.length > 0)
-        user_input = buffer[index];
+        userInput = buffer[index];
 }
 
 function updateCoolUserInput() {
-    cool_user_input = user_input;
+    coolUserInput = userInput;
     Object.entries(COMMANDS).forEach(el => { // el = arrayof[key, val]
-        if (user_input == el[1]) {
-            cool_user_input = `<o>${user_input}</o>`;
+        if (userInput == el[1]) {
+            coolUserInput = `<o>${userInput}</o>`;
         }
     });
 }

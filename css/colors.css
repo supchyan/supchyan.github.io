@@ -1,11 +1,16 @@
+:root {
+    --col-o: #ff481a;
+    --col-y: #ffcd1a;
+    --col-gr: #4cff1a;
+}
 o {
-    color: #FF481A;
+    color: var(--col-o);
 }
 y {
-    color: #ffcd1a;
+    color: var(--col-y);
 }
 gr {
-    color: #4cff1a;
+    color: var(--col-gr);
 }
 ex {
     animation-name: expert;
