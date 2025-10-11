@@ -110,6 +110,8 @@ function setMsgByInput(input) {
     }
     if (input == COMMANDS.EXIT) {
         window.close();
+        window.history.back();
+        window.location.href = "https://github.com/supchyan";
     }
     
     // push last input to the input buffer
