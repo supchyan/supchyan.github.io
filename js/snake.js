@@ -150,28 +150,42 @@ setInterval(() => {
             TUTORIAL_TXT.innerHTML = getTutorialDeadMessage();
         }
     }
+    // controls disorder fix
+    canDoGameInput = true;
 }, 100);
 
 // player
 function playerRight() {
+    if (!canDoGameInput) return;
+
     if (PLAYER.DIRECTION != "LEFT") {
         PLAYER.DIRECTION = "RIGHT";
+        canDoGameInput = false;
     }
         
 }
 function playerLeft() {
+    if (!canDoGameInput) return;
+
     if (PLAYER.DIRECTION != "RIGHT") {
         PLAYER.DIRECTION = "LEFT";
+        canDoGameInput = false;
     }
 }
 function playerUp() {
+    if (!canDoGameInput) return;
+    
     if (PLAYER.DIRECTION != "DOWN") {
         PLAYER.DIRECTION = "UP";
+        canDoGameInput = false;
     }
 }
 function playerDown() {
+    if (!canDoGameInput) return;
+    
     if (PLAYER.DIRECTION != "UP") {
         PLAYER.DIRECTION = "DOWN";
+        canDoGameInput = false;
     }
 }
 
