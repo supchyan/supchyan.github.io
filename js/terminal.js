@@ -69,7 +69,7 @@ document.onkeydown = ((e) => {
 
         setUserInputByBufferIndex(bufferIndex);
     }
-    if (KEYS.includes(e.key.toUpperCase())) {
+    if (e.key.toUpperCase().length == 1) {
         userInput += e.key.toUpperCase();
     }
     updateCoolUserInput();
@@ -89,7 +89,7 @@ setInterval(() => {
         // affect cariage blink timer
         cTick++;
     }
-}, 100);
+}, 50);
 
 function setMsgByInput(input) {
     if (input == COMMANDS.BACK) {

@@ -152,7 +152,7 @@ setInterval(() => {
     }
     // controls disorder fix
     canDoGameInput = true;
-}, 100);
+}, 50);
 
 // player
 function playerRight() {

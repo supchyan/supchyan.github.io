@@ -1,6 +1,6 @@
 @font-face {
-    font-family: vcr;
-    src: url(/resources/vcrosd.ttf);
+    font-family: mononoki;
+    src: url(/resources/mononoki.ttf);
 }
 body {
     display: flex;
@@ -15,5 +15,5 @@ body {
     overflow: hidden;
 
     background-color: black;
-    font-family: 'vcr';
+    font-family: 'mononoki';
 }
