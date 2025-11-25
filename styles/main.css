@@ -1,0 +1,30 @@
+:root {
+    --face-size: 20rem;
+}
+
+@font-face {
+    font-family: dotgothic16;
+    src: url("/resources/fonts/dotgothic16.ttf");
+}
+body {
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    user-select: none;
+
+    background-color: #111;
+
+    font-family: "dotgothic16";
+}

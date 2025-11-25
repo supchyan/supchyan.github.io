@@ -1,0 +1,65 @@
+.cube {
+    width: var(--face-size);
+    height: var(--face-size);
+
+    transform-style: preserve-3d;
+
+    user-select: none;
+
+    transform: rotateX(-90deg) rotateY(0deg);
+}
+.face {
+    position: absolute;
+    width: var(--face-size);
+    height: var(--face-size);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    user-select: none;
+
+    font-size: 5rem;
+
+    transition: all 220ms;
+}
+
+.top {
+    transform: rotateX(-270deg) translateY(calc(var(--face-size) / -2));
+    transform-origin: top center;
+}
+.bottom {
+    background-color: chocolate;
+    opacity: 50%;
+
+    transform: rotateX(270deg) translateY(calc(var(--face-size) / 2));
+    transform-origin: bottom center;
+}
+
+.left {
+    background-color: blue;
+    opacity: 50%;
+
+    transform: rotateY(270deg) translateX(calc(var(--face-size) / -2));
+    transform-origin: center left;
+}
+.right {
+    background-color: red;
+    opacity: 50%;
+
+    transform: rotateY(-270deg) translateX(calc(var(--face-size) / 2));
+    transform-origin: top right;
+}
+
+.front {
+    background-color: yellow;
+    opacity: 50%;
+
+    transform: translateZ(calc(var(--face-size) / 2));
+}
+.back {
+    background-color: green;
+    opacity: 50%;
+
+    transform: translateZ(calc(var(--face-size) / -2)) rotateY(180deg);
+}

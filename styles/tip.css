@@ -1,0 +1,38 @@
+#tip {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+    padding-bottom: 10rem;
+
+    width: 60vw;
+    height: 100vh;
+
+    user-select: none;
+    pointer-events: none;
+
+    font-size: 1.1rem;
+
+    text-align: center;
+
+    color: white;
+
+    opacity: 0;
+
+    animation-name: tip_show;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-delay: 5s;
+}
+
+@keyframes tip_show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.8;
+    }
+}

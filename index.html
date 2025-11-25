@@ -2,29 +2,65 @@
 <html>
     <head>
         <title>/</title>
-        <link rel="stylesheet" href="/css/colors.css">
-        <link rel="stylesheet" href="/css/core.css">
-        <link rel="stylesheet" href="/css/snake.css">
-        <link rel="stylesheet" href="/css/kujira.css">
-        <link rel="stylesheet" href="/css/terminal.css">
+        <link rel="icon" href="/" />
+        <link rel="stylesheet" href="./styles/main.css" />
+        <link rel="stylesheet" href="./styles/tip.css" />
+        <link rel="stylesheet" href="./styles/cube.css" />
+        <link rel="stylesheet" href="./styles/cube_top.css" />
     </head>
-    <body>
-        <div id="terminal"></div>
-        <div id="snake">
-            <div id="segments"></div>
-            <div id="player"></div>
-            <div id="apple"></div>
-            <div id="score"></div>
-            <div id="tutorial">
-                <div id="tutorial_text"></div>
+    <body oncontextmenu="return false">
+        <div id="cube" class="cube">
+            <div class="face top">
+                <div class="content_top">
+                    <div id="s_area">
+                        <div class="cell" id="s_0"></div>
+                        <div class="cell" id="s_1"></div>
+                    </div>
+                    <div id="u_area">
+                        <div class="cell" id="u_0"></div>
+                        <div class="cell" id="u_1"></div>
+                    </div>
+                    <div id="p_area">
+                        <div class="cell" id="p_0"></div>
+                        <div class="cell" id="p_1"></div>
+                    </div>
+                    <div id="c_area">
+                        <div class="cell" id="c_0"></div>
+                        <div class="cell" id="c_1"></div>
+                    </div>
+                    <div id="h_area">
+                        <div class="cell" id="h_0"></div>
+                        <div class="cell" id="h_1"></div>
+                        <div class="cell" id="h_2"></div>
+                    </div>
+                    <div id="y_area">
+                        <div class="cell" id="y_0"></div>
+                        <div class="cell" id="y_1"></div>
+                    </div>
+                    <div id="a_area">
+                        <div class="cell" id="a_0"></div>
+                        <div class="cell" id="a_1"></div>
+                    </div>
+                    <div id="n_area">
+                        <div class="cell" id="n_0"></div>
+                        <div class="cell" id="n_1"></div>
+                    </div>
+                    <div id="o_area">
+                        <div class="cell" id="o_0"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="face bottom">X</div>
+            <div class="face left">A</div>
+            <div class="face front">B</div>
+            <div class="face right">C</div>
+            <div class="face back">D</div>
+        </div>
+        <div id="tip">
+            <div>
+                TIP: You can read about my projects, rotating this cube and clicking on the related cube face.
             </div>
         </div>
-        <div id="kujira"></div>
-        <script src="/js/time.js"></script>
-        <script src="/js/keys.js"></script>
-        <script src="/js/commands.js"></script>
-        <script src="/js/messages.js"></script>
-        <script src="/js/snake.js"></script>
-        <script src="/js/terminal.js"></script>
+        <script src="./scripts/CubeManager.js"></script>
     </body>
 </html>
