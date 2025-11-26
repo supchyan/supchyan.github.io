@@ -42,9 +42,6 @@
 }
 
 .left {
-    background-color: blue;
-    opacity: 50%;
-
     transform: rotateY(270deg) translateX(calc(var(--face-size) / -2));
     transform-origin: center left;
 }
