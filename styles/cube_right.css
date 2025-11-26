@@ -22,24 +22,41 @@
     background-size: 99%;
 }
 
-#ka_spirits_area {
+.ka_spirits_area {
     grid-area: ka_spirits_area;
 }
-#ka_spirits_0 {
-    background-image: url("/resources/right/ka_spirits_0.svg");
-    
+.ka_spirits {
     width: calc(var(--face-size));
     height: calc(var(--face-size) / 1.5);
     
     background-repeat: repeat;
+}
+#ka_spirits_0 {
+    background-image: url("/resources/right/ka_spirits_0.svg");
 
     background-size: 200%;
-    background-position-y: -1.15rem;
+    background-position-y: -0.5rem;
 
     animation-name: ka_spirits_0_move; 
     animation-duration: 7s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+}
+#ka_spirits_bg_0 {
+    background-image: url("/resources/right/ka_spirits_bg_0.svg");
+
+    animation-name: ka_spirits_bg_0_move; 
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0,.1,0,1);
+}
+#ka_spirits_bg_1 {
+    background-image: url("/resources/right/ka_spirits_bg_1.svg");
+    
+    animation-name: ka_spirits_bg_1_move; 
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0,.1,0,1);
 }
 
 #ka_label_area {
@@ -58,5 +75,41 @@
     }
     100% {
         background-position-x: -40rem;
+    }
+}
+@keyframes ka_spirits_bg_0_move {
+    0% {
+        scale: 1;
+        opacity: .1;
+    }
+    60% {
+        scale: 1;
+        opacity: .1;
+    }
+    80% {
+        scale: .95;
+        opacity: .3;
+    }
+    100% {
+        scale: 1;
+        opacity: .1;
+    }
+}
+@keyframes ka_spirits_bg_1_move {
+    0% {
+        scale: 1;
+        opacity: .1;
+    }
+    60% {
+        scale: 1;
+        opacity: .1;
+    }
+    80% {
+        scale: 1.3;
+        opacity: .3;
+    }
+    100% {
+        scale: 1;
+        opacity: .1;
     }
 }

@@ -77,7 +77,7 @@
 
 @keyframes lb_flowers_1_move {
     0% {
-        background-position-x: 0rem;
+        background-position-x: 0;
         background-position-y: 0;
     }
     100% {
