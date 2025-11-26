@@ -12,12 +12,12 @@
     "c-area h-area y-area"
     "a-area n-area o-area";
 
-    background-color: #222;
+    background-color: var(--face-color);
 
     filter: none;
 }
 
-.cell {
+.cell_top {
     position: absolute;
     width: calc(var(--face-size) / 3);
     height: calc(var(--face-size) / 3);
@@ -25,14 +25,14 @@
     background-position: center;
     background-size: 99%;
 
-    opacity: 10%;
+    opacity: 20%;
 
     animation-name: cell_blink;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
     animation-duration: 300ms;
 
-    filter: drop-shadow(0rem 0rem 10rem #fff);
+    filter: drop-shadow(0rem 0rem 0rem #fff);
 }
 
 #s_area {
@@ -145,19 +145,17 @@
     animation-iteration-count: infinite;
     animation-duration: 2s;
     animation-delay: 2s;
-
-    filter: drop-shadow(0rem 0rem 10rem #ff3);
 }
 
 @keyframes cell_blink {
     0% {
-        opacity: 10%;
+        opacity: 20%;
     }
     20% {
         opacity: 60%;
     }
     60% {
-        opacity: 10%;
+        opacity: 20%;
     }
     100% {
         opacity: 100%;
@@ -166,12 +164,12 @@
 
 @keyframes o_blink {
     0% {
-        opacity: 10%;
+        opacity: 20%;
     }
     50% {
         opacity: 100%;
     }
     100% {
-        opacity: 10%;
+        opacity: 20%;
     }
 }

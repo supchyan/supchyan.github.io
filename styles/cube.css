@@ -1,4 +1,4 @@
-.cube {
+#cube {
     width: var(--face-size);
     height: var(--face-size);
 
@@ -24,6 +24,11 @@
     transition: all 220ms;
 }
 
+.face:hover {
+    filter: grayscale();
+    cursor: pointer;
+}
+
 .top {
     transform: rotateX(-270deg) translateY(calc(var(--face-size) / -2));
     transform-origin: top center;
@@ -44,17 +49,11 @@
     transform-origin: center left;
 }
 .right {
-    background-color: red;
-    opacity: 50%;
-
     transform: rotateY(-270deg) translateX(calc(var(--face-size) / 2));
     transform-origin: top right;
 }
 
 .front {
-    background-color: yellow;
-    opacity: 50%;
-
     transform: translateZ(calc(var(--face-size) / 2));
 }
 .back {

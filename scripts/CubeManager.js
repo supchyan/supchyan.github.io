@@ -49,8 +49,8 @@ setInterval(() => {
     }
     var dist_vec = { X: target_vec.X - cube_vec.X, Y: target_vec.Y - cube_vec.Y };
 
-    cube_vec.X += (dist_vec.X * 0.08);
-    cube_vec.Y += (dist_vec.Y * 0.08);
+    cube_vec.X += (dist_vec.X * 0.06);
+    cube_vec.Y += (dist_vec.Y * 0.06);
 
     if (cube_vec.Y > 90) cube_vec.Y = 90;
     if (cube_vec.Y < -90) cube_vec.Y = -90;

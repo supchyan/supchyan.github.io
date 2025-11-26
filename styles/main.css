@@ -1,5 +1,6 @@
 :root {
     --face-size: 20rem;
+    --face-color: #2d2d2d;
 }
 
 @font-face {
@@ -27,4 +28,20 @@ body {
     background-color: #111;
 
     font-family: "dotgothic16";
+
+    animation-name: body_show;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(.1,.5,.1,1);
+    animation-fill-mode: forwards;
+}
+
+@keyframes body_show {
+    from {
+        scale: 0.95;
+        opacity: 0;
+    }
+    to {
+        scale: 1;
+        opacity: 1;
+    }
 }
