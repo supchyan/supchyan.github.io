@@ -35,6 +35,10 @@ body {
     animation-fill-mode: forwards;
 }
 
+.pre_line { /* for text elements with line breaks. */
+    white-space: pre-line;
+}
+
 @keyframes body_show {
     from {
         scale: 0.95;
