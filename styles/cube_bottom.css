@@ -13,7 +13,7 @@
 }
 
 #ao_bg_0 {
-    background-image: url("/resources/bottom/ao_bg_0.svg");
+    background-image: url("/resources/faces/bottom/ao_bg_0.svg");
     
     width: var(--face-size);
     height: var(--face-size);
@@ -24,7 +24,7 @@
     animation-timing-function: linear;
 }
 #ao_bg_1 {
-    background-image: url("/resources/bottom/ao_bg_1.svg");
+    background-image: url("/resources/faces/bottom/ao_bg_1.svg");
     
     width: var(--face-size);
     height: var(--face-size);
@@ -37,7 +37,7 @@
     animation-timing-function: linear;
 }
 #ao_bg_2 {
-    background-image: url("/resources/bottom/ao_bg_2.svg");
+    background-image: url("/resources/faces/bottom/ao_bg_2.svg");
     
     width: var(--face-size);
     height: var(--face-size);
@@ -51,21 +51,21 @@
 }
 
 #ao_win_0 {
-    background-image: url("/resources/bottom/ao_win_0.svg");
+    background-image: url("/resources/faces/bottom/ao_win_0.svg");
     
     width: var(--face-size);
     height: var(--face-size);
 }
 
 #ao_label_0 {
-    background-image: url("/resources/bottom/ao_label_0.svg");
+    background-image: url("/resources/faces/bottom/ao_label_0.svg");
     
     width: var(--face-size);
     height: var(--face-size);
 }
 
 #ao_tsurikawa_0 {
-    background-image: url("/resources/bottom/ao_tsurikawa_0.svg");
+    background-image: url("/resources/faces/bottom/ao_tsurikawa_0.svg");
 
     width: var(--face-size);
     height: var(--face-size);
@@ -78,7 +78,7 @@
 }
 
 #ao_chair_0 {
-    background-image: url("/resources/bottom/ao_chair_0.svg");
+    background-image: url("/resources/faces/bottom/ao_chair_0.svg");
     background-size: 70%;
     background-position-y: -3.2rem;
     

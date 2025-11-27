@@ -32,7 +32,7 @@
     background-repeat: repeat;
 }
 #ka_spirits_0 {
-    background-image: url("/resources/right/ka_spirits_0.svg");
+    background-image: url("/resources/faces/right/ka_spirits_0.svg");
 
     background-size: 200%;
     background-position-y: -0.5rem;
@@ -43,7 +43,7 @@
     animation-timing-function: linear;
 }
 #ka_spirits_bg_0 {
-    background-image: url("/resources/right/ka_spirits_bg_0.svg");
+    background-image: url("/resources/faces/right/ka_spirits_bg_0.svg");
 
     animation-name: ka_spirits_bg_0_move; 
     animation-duration: 3s;
@@ -51,7 +51,7 @@
     animation-timing-function: cubic-bezier(0,.1,0,1);
 }
 #ka_spirits_bg_1 {
-    background-image: url("/resources/right/ka_spirits_bg_1.svg");
+    background-image: url("/resources/faces/right/ka_spirits_bg_1.svg");
     
     animation-name: ka_spirits_bg_1_move; 
     animation-duration: 3s;
@@ -63,7 +63,7 @@
     grid-area: ka_label_area;
 }
 #ka_label_0 {
-    background-image: url("/resources/right/ka_label_0.svg");
+    background-image: url("/resources/faces/right/ka_label_0.svg");
     
     width: calc(var(--face-size));
     height: calc(var(--face-size) / 3);

@@ -39,11 +39,11 @@
     grid-area: s-area;
 }
 #s_0 {
-    background-image: url("/resources/top/letters/s_0.svg");
+    background-image: url("/resources/faces/top/s_0.svg");
     animation-delay: 1s;
 }
 #s_1 {
-    background-image: url("/resources/top/letters/s_1.svg");
+    background-image: url("/resources/faces/top/s_1.svg");
     animation-delay: 1.05s;
 }
 
@@ -51,11 +51,11 @@
     grid-area: u-area;
 }
 #u_0 {
-    background-image: url("/resources/top/letters/u_0.svg");
+    background-image: url("/resources/faces/top/u_0.svg");
     animation-delay: 1.1s;
 }
 #u_1 {
-    background-image: url("/resources/top/letters/u_1.svg");
+    background-image: url("/resources/faces/top/u_1.svg");
     animation-delay: 1.15s;
 }
 
@@ -63,11 +63,11 @@
     grid-area: p-area;
 }
 #p_0 {
-    background-image: url("/resources/top/letters/p_0.svg");
+    background-image: url("/resources/faces/top/p_0.svg");
     animation-delay: 1.2s;
 }
 #p_1 {
-    background-image: url("/resources/top/letters/p_1.svg");
+    background-image: url("/resources/faces/top/p_1.svg");
     animation-delay: 1.25s;
 }
 
@@ -75,11 +75,11 @@
     grid-area: c-area;
 }
 #c_0 {
-    background-image: url("/resources/top/letters/c_0.svg");
+    background-image: url("/resources/faces/top/c_0.svg");
     animation-delay: 1.12s;
 }
 #c_1 {
-    background-image: url("/resources/top/letters/c_1.svg");
+    background-image: url("/resources/faces/top/c_1.svg");
     animation-delay: 1.14s;
 }
 
@@ -87,15 +87,15 @@
     grid-area: h-area;
 }
 #h_0 {
-    background-image: url("/resources/top/letters/h_0.svg");
+    background-image: url("/resources/faces/top/h_0.svg");
     animation-delay: 1.3s;
 }
 #h_1 {
-    background-image: url("/resources/top/letters/h_1.svg");
+    background-image: url("/resources/faces/top/h_1.svg");
     animation-delay: 1.35s;
 }
 #h_2 {
-    background-image: url("/resources/top/letters/h_2.svg");
+    background-image: url("/resources/faces/top/h_2.svg");
     animation-delay: 1.4s;
 }
 
@@ -103,11 +103,11 @@
     grid-area: y-area;
 }
 #y_0 {
-    background-image: url("/resources/top/letters/y_0.svg");
+    background-image: url("/resources/faces/top/y_0.svg");
     animation-delay: 1.22s;
 }
 #y_1 {
-    background-image: url("/resources/top/letters/y_1.svg");
+    background-image: url("/resources/faces/top/y_1.svg");
     animation-delay: 1.24s;
 }
 
@@ -115,11 +115,11 @@
     grid-area: a-area;
 }
 #a_0 {
-    background-image: url("/resources/top/letters/a_0.svg");
+    background-image: url("/resources/faces/top/a_0.svg");
     animation-delay: 1.26s;
 }
 #a_1 {
-    background-image: url("/resources/top/letters/a_1.svg");
+    background-image: url("/resources/faces/top/a_1.svg");
     animation-delay: 1.28s;
 }
 
@@ -127,11 +127,11 @@
     grid-area: n-area;
 }
 #n_0 {
-    background-image: url("/resources/top/letters/n_0.svg");
+    background-image: url("/resources/faces/top/n_0.svg");
     animation-delay: 1.3s;
 }
 #n_1 {
-    background-image: url("/resources/top/letters/n_1.svg");
+    background-image: url("/resources/faces/top/n_1.svg");
     animation-delay: 1.32s;
 }
 
@@ -139,7 +139,7 @@
     grid-area: o-area;
 }
 #o_0 {
-    background-image: url("/resources/top/letters/o_0.svg");
+    background-image: url("/resources/faces/top/o_0.svg");
     animation-name: o_blink;
     animation-timing-function: cubic-bezier(0, .96, 0, .96);
     animation-iteration-count: infinite;

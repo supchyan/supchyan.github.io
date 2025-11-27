@@ -32,7 +32,7 @@
     background-repeat: repeat;
 }
 #lb_flowers_0 {
-    background-image: url("/resources/left/lb_flowers_0.svg");
+    background-image: url("/resources/faces/left/lb_flowers_0.svg");
 
     background-size: 33%;
 
@@ -42,7 +42,7 @@
     animation-timing-function: linear;
 }
 #lb_flowers_1 {
-    background-image: url("/resources/left/lb_flowers_1.svg");
+    background-image: url("/resources/faces/left/lb_flowers_1.svg");
 
     background-size: 44%;
 
@@ -58,7 +58,7 @@
     grid-area: lb_label_area;
 }
 #lb_label_0 {
-    background-image: url("/resources/left/lb_label_0.svg");
+    background-image: url("/resources/faces/left/lb_label_0.svg");
     
     width: calc(var(--face-size));
     height: calc(var(--face-size) / 3);

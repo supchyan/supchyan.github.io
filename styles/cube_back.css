@@ -36,7 +36,7 @@
 .mp_grid_bg_0 {
     position: absolute;
     
-    background-image: url("/resources/back/mp_grid_bg_0.svg");
+    background-image: url("/resources/faces/back/mp_grid_bg_0.svg");
 
     background-repeat: repeat;
     background-position: center;
@@ -66,7 +66,7 @@
     grid-area: mp_grabber_area;
 }
 #mp_grabber_0 {
-    background-image: url("/resources/back/mp_grabber_0.svg");
+    background-image: url("/resources/faces/back/mp_grabber_0.svg");
     
     width: calc(var(--face-size) / 1.5);
     height: calc(var(--face-size) / 3);
@@ -78,7 +78,7 @@
     grid-area: mp_lamp_area;
 }
 #mp_lamp_0 {
-    background-image: url("/resources/back/mp_lamp_0.svg");
+    background-image: url("/resources/faces/back/mp_lamp_0.svg");
     
     width: calc(var(--face-size) / 3);
     height: calc(var(--face-size) / 3);
@@ -97,7 +97,7 @@
     grid-area: mp_flower_area;
 }
 #mp_flower_0 {
-    background-image: url("/resources/back/mp_flower_0.svg");
+    background-image: url("/resources/faces/back/mp_flower_0.svg");
     background-position: 0 0;
     
     width: calc(var(--face-size) / 3);
@@ -113,7 +113,7 @@
     grid-area: mp_wave_area;
 }
 .mp_wave {
-    background-image: url("/resources/back/mp_wave_0.svg");
+    background-image: url("/resources/faces/back/mp_wave_0.svg");
 
     margin: 0.3rem; /* `.25rem`, but to make it look pretier it's `.3rem` */
 
@@ -144,7 +144,7 @@
     grid-area: mp_label_area;
 }
 #mp_label_0 {
-    background-image: url("/resources/back/mp_label_0.svg");
+    background-image: url("/resources/faces/back/mp_label_0.svg");
     
     width: calc(var(--face-size));
     height: calc(var(--face-size) / 3);
