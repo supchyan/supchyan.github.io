@@ -12,6 +12,10 @@ class CubeManager {
 
         this.start_vec   = { X: 0,  Y: 0  }; // start point when pointer pressed
         this.old_vec     = { X: 0,  Y: 0  }; // old cube rotation vector
+
+        // vectors below is not a `vec2.zero`,
+        // because i want to force cube rotate on page load
+        // after `locked` trigger begones.
         this.cube_vec    = { X: 0,  Y: 90 }; // initial cube rotation vector
         this.target_vec  = { X: 45, Y: 25 }; // target rotation vector
 
@@ -47,6 +51,7 @@ class CubeManager {
                 }
                 return;
             }
+            
             var dist_vec = { X: this.target_vec.X - this.cube_vec.X, Y: this.target_vec.Y - this.cube_vec.Y };
 
             this.cube_vec.X += (dist_vec.X * 0.06);

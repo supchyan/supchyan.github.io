@@ -1,8 +1,6 @@
 const cube = document.getElementById("cube");
 const hint = document.getElementById("hint");
 
-const cubeManager = new CubeManager();
-const hintManager = new HintManager();
+new CubeManager().init(cube); // init a new cube manager
 
-cubeManager.init(cube);
-hintManager.init(hint);
+TextLoader.loadText("hint.md", hint); // load a main hint text

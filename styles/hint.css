@@ -21,14 +21,14 @@
 
     opacity: 0;
 
-    animation-name: tip_show;
+    animation-name: hint_show;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
     animation-duration: 2s;
     animation-delay: 5s;
 }
 
-@keyframes tip_show {
+@keyframes hint_show {
     from {
         opacity: 0;
     }
