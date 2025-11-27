@@ -1,0 +1,108 @@
+.content_bottom {
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--face-color);
+}
+
+.ao_sprite {
+    position: absolute;
+
+    background-size: 100%;
+    background-position: center;
+}
+
+#ao_bg_0 {
+    background-image: url("/resources/bottom/ao_bg_0.svg");
+    
+    width: var(--face-size);
+    height: var(--face-size);
+
+    animation-name: ao_bg_move; 
+    animation-duration: .3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+#ao_bg_1 {
+    background-image: url("/resources/bottom/ao_bg_1.svg");
+    
+    width: var(--face-size);
+    height: var(--face-size);
+
+    opacity: .5;
+
+    animation-name: ao_bg_move; 
+    animation-duration: .4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+#ao_bg_2 {
+    background-image: url("/resources/bottom/ao_bg_2.svg");
+    
+    width: var(--face-size);
+    height: var(--face-size);
+
+    opacity: .2;
+
+    animation-name: ao_bg_move; 
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#ao_win_0 {
+    background-image: url("/resources/bottom/ao_win_0.svg");
+    
+    width: var(--face-size);
+    height: var(--face-size);
+}
+
+#ao_label_0 {
+    background-image: url("/resources/bottom/ao_label_0.svg");
+    
+    width: var(--face-size);
+    height: var(--face-size);
+}
+
+#ao_tsurikawa_0 {
+    background-image: url("/resources/bottom/ao_tsurikawa_0.svg");
+
+    width: var(--face-size);
+    height: var(--face-size);
+
+    animation-name: ao_tsurikawa_move; 
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+}
+
+#ao_chair_0 {
+    background-image: url("/resources/bottom/ao_chair_0.svg");
+    background-size: 70%;
+    background-position-y: -3.2rem;
+    
+    width: var(--face-size);
+    height: var(--face-size);
+}
+
+@keyframes ao_bg_move {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position-x: -20rem;
+    }
+}
+
+@keyframes ao_tsurikawa_move {
+    0% {
+        transform: translateX(4.3rem) translateY(-9.8rem) rotate(1deg);
+    }
+    50% {
+        transform: translateX(4.3rem) translateY(-9.8rem) rotate(4deg);
+    }
+    100% {
+        transform: translateX(4.3rem) translateY(-9.8rem) rotate(1deg);
+    }
+}

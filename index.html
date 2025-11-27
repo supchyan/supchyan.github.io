@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="./styles/cube_front.css" />
         <link rel="stylesheet" href="./styles/cube_right.css" />
         <link rel="stylesheet" href="./styles/cube_left.css" />
+        <link rel="stylesheet" href="./styles/cube_bottom.css" />
     </head>
     <body oncontextmenu="return false">
         <div id="cube">
@@ -53,7 +54,17 @@
                     </div>
                 </div>
             </div>
-            <div class="face bottom">aeno</div>
+            <div class="face bottom">
+                <div class="content_bottom">
+                    <div class="ao_sprite" id="ao_bg_0"></div>
+                    <div class="ao_sprite" id="ao_bg_1"></div>
+                    <div class="ao_sprite" id="ao_bg_2"></div>
+                    <div class="ao_sprite" id="ao_win_0"></div>
+                    <div class="ao_sprite" id="ao_label_0"></div>
+                    <div class="ao_sprite" id="ao_tsurikawa_0"></div>
+                    <div class="ao_sprite" id="ao_chair_0"></div>
+                </div>
+            </div>
             <div class="face left">
                 <div class="content_left">
                     <div class="lb_flowers_area">
@@ -100,7 +111,7 @@
         </div>
         <div id="tip">
             <div>
-                TIP: You can read about my projects, rotating this cube and clicking on the related cube face.
+                TIP: You can read bunch of stories about my projects, rotating this cube and clicking on the project's related cube face.
             </div>
         </div>
         <script src="./scripts/CubeManager.js"></script>

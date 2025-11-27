@@ -22,6 +22,8 @@
     font-size: 5rem;
 
     transition: all 220ms;
+
+    overflow: hidden;
 }
 
 .face:hover {
@@ -34,9 +36,6 @@
     transform-origin: top center;
 }
 .bottom {
-    background-color: chocolate;
-    opacity: 50%;
-
     transform: rotateX(270deg) translateY(calc(var(--face-size) / 2));
     transform-origin: bottom center;
 }
