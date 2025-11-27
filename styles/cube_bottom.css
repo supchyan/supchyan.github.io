@@ -97,12 +97,12 @@
 
 @keyframes ao_tsurikawa_move {
     0% {
-        transform: translateX(4.3rem) translateY(-9.8rem) rotate(1deg);
+        transform: translateX(4.3rem) translateY(-10rem) rotate(1deg);
     }
     50% {
-        transform: translateX(4.3rem) translateY(-9.8rem) rotate(4deg);
+        transform: translateX(4.3rem) translateY(-10rem) rotate(4deg);
     }
     100% {
-        transform: translateX(4.3rem) translateY(-9.8rem) rotate(1deg);
+        transform: translateX(4.3rem) translateY(-10rem) rotate(1deg);
     }
 }

@@ -53,8 +53,5 @@
     transform: translateZ(calc(var(--face-size) / 2));
 }
 .back {
-    background-color: green;
-    opacity: 50%;
-
     transform: translateZ(calc(var(--face-size) / -2)) rotateY(180deg);
 }
