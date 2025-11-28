@@ -35,6 +35,11 @@
     transform: rotateX(-270deg) translateY(calc(var(--face-size) / -2));
     transform-origin: top center;
 }
+.top:hover {
+    filter: none;
+    cursor: default;
+}
+
 .bottom {
     transform: rotateX(270deg) translateY(calc(var(--face-size) / 2));
     transform-origin: bottom center;

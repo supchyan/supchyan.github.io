@@ -12,28 +12,28 @@
     transition: all 220ms;
 }
 
-@media screen and (max-width: 50rem) { /* 50 + 4 for left and right margins. */
+@media screen and (max-width: 50rem) {
     #scene {
         scale: .7;
         margin-bottom: 10rem;
     }
 }
 
-@media screen and (max-width: 30rem) { /* 50 + 4 for left and right margins. */
+@media screen and (max-width: 30rem) {
     #scene {
-        scale: .5;
-        margin-bottom: 15rem;
+        scale: .6;
+        margin-bottom: 13rem;
     }
 }
 
-@media screen and (max-height: 50rem) { /* 50 + 4 for left and right margins. */
+@media screen and (max-height: 50rem) {
     #scene {
         scale: .7;
     }
 }
 
-@media screen and (max-height: 30rem) { /* 50 + 4 for left and right margins. */
+@media screen and (max-height: 30rem) {
     #scene {
-        scale: .5;
+        scale: .6;
     }
 }

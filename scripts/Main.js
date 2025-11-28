@@ -24,7 +24,7 @@ const monoController = new MonologueController(cubeManager);
 // init a new cube manager
 cubeManager.init(cube);
 
-var showHint = false;
+var isClickable = false;
 
 var down_client_vec = { X: 0, Y: 0 };
 var up_client_vec   = { X: 0, Y: 0 };
@@ -49,14 +49,14 @@ function registerEvents(element, tooltip, monologue_title = null, monologue = nu
     }
 
     element.onpointerenter = () => {
-        showHint = false;
+        isClickable = false;
         textLoader.load(`/tooltips/${tooltip}`, hint, 10);
     }
     element.onpointerleave = () => {
-        showHint = true; // set show hint flag
+        isClickable = true; // set show hint flag
 
         setTimeout(() => { 
-            if (showHint) { // if show hint flag is still `true` (i. e. nothing hovered after some delay), show hint tooltip.
+            if (isClickable) { // if show hint flag is still `true` (i. e. nothing hovered after some delay), show hint tooltip.
                 textLoader.load("/tooltips/hint_tooltip.md", hint, 10);
             }
         }, 100);

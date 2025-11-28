@@ -68,6 +68,7 @@
 #mono_footer {
     height: auto;
     width: 100%;
+    min-width: 30rem;
     
     display: flex;
     flex-direction: row;
@@ -90,8 +91,14 @@
 }
 
 #mono_title {
+    height: calc(100% - 2rem);
+
     padding: 1rem;
     background-color: #f60;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #mono_title:hover {
     cursor: no-drop;
