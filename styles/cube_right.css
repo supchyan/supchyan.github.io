@@ -1,0 +1,104 @@
+.content_right {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+
+    gap: 0;
+    grid-template-columns: calc(var(--face-size) / 3) calc(var(--face-size) / 3) calc(var(--face-size) / 3);
+    grid-template-rows: calc(var(--face-size) / 3) calc(var(--face-size) / 3) calc(var(--face-size) / 3);
+    grid-template-areas: 
+    "ka_spirits_area ka_spirits_area ka_spirits_area"
+    "ka_spirits_area ka_spirits_area ka_spirits_area"
+    "ka_label_area ka_label_area ka_label_area";
+
+    background-color: var(--face-color);
+}
+
+.cell_right {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 99%;
+}
+
+.ka_spirits_area {
+    grid-area: ka_spirits_area;
+}
+.ka_spirits {
+    width: calc(var(--face-size));
+    height: calc(var(--face-size) / 1.5);
+    
+    background-repeat: repeat;
+}
+#ka_spirits_0 {
+    background-image: url("/resources/faces/right/ka_spirits_0.svg");
+
+    background-size: 200%;
+    background-position-y: -0.5rem;
+
+    animation: ka_spirits_0_move 7s linear infinite;
+}
+#ka_spirits_bg_0 {
+    background-image: url("/resources/faces/right/ka_spirits_bg_0.svg");
+    animation: ka_spirits_bg_0_move 3s cubic-bezier(0,.1,0,1) infinite;
+}
+#ka_spirits_bg_1 {
+    background-image: url("/resources/faces/right/ka_spirits_bg_1.svg");
+    animation: ka_spirits_bg_1_move 3s cubic-bezier(0,.1,0,1) infinite;
+}
+
+#ka_label_area {
+    grid-area: ka_label_area;
+}
+#ka_label_0 {
+    background-image: url("/resources/faces/right/ka_label_0.svg");
+    
+    width: calc(var(--face-size));
+    height: calc(var(--face-size) / 3);
+}
+
+@keyframes ka_spirits_0_move {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -40rem;
+    }
+}
+@keyframes ka_spirits_bg_0_move {
+    0% {
+        scale: 1;
+        opacity: .1;
+    }
+    60% {
+        scale: 1;
+        opacity: .1;
+    }
+    80% {
+        scale: .95;
+        opacity: .3;
+    }
+    100% {
+        scale: 1;
+        opacity: .1;
+    }
+}
+@keyframes ka_spirits_bg_1_move {
+    0% {
+        scale: 1;
+        opacity: .1;
+    }
+    60% {
+        scale: 1;
+        opacity: .1;
+    }
+    80% {
+        scale: 1.3;
+        opacity: .3;
+    }
+    100% {
+        scale: 1;
+        opacity: .1;
+    }
+}

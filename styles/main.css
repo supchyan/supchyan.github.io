@@ -1,0 +1,61 @@
+:root {
+    --face-size: 20rem;
+    --face-color: #2d2d2d;
+    --bg-color: #111;
+}
+
+@font-face {
+    font-family: dotgothic16;
+    src: url("/resources/fonts/dotgothic16.ttf");
+}
+body {
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    user-select: none;
+
+    background-color: var(--bg-color);
+
+    font-family: "dotgothic16";
+
+    animation-name: body_show;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(.1,.5,.1,1);
+    animation-fill-mode: forwards;
+}
+
+.pre_line { /* for text elements with line breaks. */
+    white-space: pre-line;
+}
+
+.button {
+    transition: all 60ms;
+}
+
+.button:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+
+@keyframes body_show {
+    from {
+        scale: 0.95;
+        opacity: 0;
+    }
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}

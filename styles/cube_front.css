@@ -1,0 +1,78 @@
+.content_front {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+
+    gap: 0;
+    grid-template-columns: calc(var(--face-size) / 3) calc(var(--face-size) / 3) calc(var(--face-size) / 3);
+    grid-template-rows: calc(var(--face-size) / 3) calc(var(--face-size) / 3) calc(var(--face-size) / 3);
+    grid-template-areas: 
+    "dt_flower_area dt_flower_area dt_line_area"
+    "dt_flower_area dt_flower_area dt_line_area"
+    "dt_label_area dt_label_area dt_label_area";
+
+    background-color: var(--face-color);
+}
+
+.cell_front {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 99%;
+}
+
+#dt_flower_area {
+    grid-area: dt_flower_area;
+}
+#dt_flower_0 {
+    background-image: url("/resources/faces/front/dt_flower_0.svg");
+    
+    width: calc(var(--face-size) / 1.5);
+    height: calc(var(--face-size) / 1.5);
+
+    animation: dt_flower_0_move 5s linear infinite;
+}
+
+#dt_line_area {
+    grid-area: dt_line_area;
+}
+#dt_line_0 {
+    background-image: url("/resources/faces/front/dt_line_0.svg");
+    
+    width: calc(var(--face-size) / 3);
+    height: calc(var(--face-size) / 1.5);
+    
+    background-repeat: repeat;
+
+    background-size: 50%;
+
+    animation: dt_line_0_move 5s linear infinite;
+}
+
+#dt_label_area {
+    grid-area: dt_label_area;
+}
+#dt_label_0 {
+    background-image: url("/resources/faces/front/dt_label_0.svg");
+    
+    width: calc(var(--face-size));
+    height: calc(var(--face-size) / 3);
+}
+
+@keyframes dt_line_0_move {
+    from {
+        background-position-y: 0;
+    }
+    to {
+        background-position-y: 100%;
+    }
+}
+@keyframes dt_flower_0_move {
+    from {
+        transform: rotateZ(0);
+    }
+    to {
+        transform: rotateZ(90deg);
+    }
+}

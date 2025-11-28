@@ -1,0 +1,1 @@
+Decentralized Arduino based IoT platform core.

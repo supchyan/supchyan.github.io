@@ -1,0 +1,62 @@
+#cube {
+    width: var(--face-size);
+    height: var(--face-size);
+
+    transform-style: preserve-3d;
+
+    user-select: none;
+
+    transform: rotateX(-90deg) rotateY(0deg);
+}
+.face {
+    position: absolute;
+    width: var(--face-size);
+    height: var(--face-size);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    user-select: none;
+
+    font-size: 5rem;
+
+    transition: all 220ms;
+
+    overflow: hidden;
+}
+
+.face:hover {
+    filter: grayscale();
+    cursor: pointer;
+}
+
+.top {
+    transform: rotateX(-270deg) translateY(calc(var(--face-size) / -2));
+    transform-origin: top center;
+}
+.top:hover {
+    filter: none;
+    cursor: default;
+}
+
+.bottom {
+    transform: rotateX(270deg) translateY(calc(var(--face-size) / 2));
+    transform-origin: bottom center;
+}
+
+.left {
+    transform: rotateY(270deg) translateX(calc(var(--face-size) / -2));
+    transform-origin: center left;
+}
+.right {
+    transform: rotateY(-270deg) translateX(calc(var(--face-size) / 2));
+    transform-origin: top right;
+}
+
+.front {
+    transform: translateZ(calc(var(--face-size) / 2));
+}
+.back {
+    transform: translateZ(calc(var(--face-size) / -2)) rotateY(180deg);
+}

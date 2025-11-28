@@ -1,0 +1,95 @@
+.content_bottom {
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--face-color);
+}
+
+.ao_sprite {
+    position: absolute;
+
+    background-size: 100%;
+    background-position: center;
+}
+
+#ao_bg_0 {
+    background-image: url("/resources/faces/bottom/ao_bg_0.svg");
+    
+    width: var(--face-size);
+    height: var(--face-size);
+
+    animation: ao_bg_move .3s linear infinite;
+}
+#ao_bg_1 {
+    background-image: url("/resources/faces/bottom/ao_bg_1.svg");
+    
+    width: var(--face-size);
+    height: var(--face-size);
+
+    opacity: .5;
+
+    animation: ao_bg_move .4s linear infinite;
+}
+#ao_bg_2 {
+    background-image: url("/resources/faces/bottom/ao_bg_2.svg");
+    
+    width: var(--face-size);
+    height: var(--face-size);
+
+    opacity: .2;
+
+    animation: ao_bg_move .5s linear infinite;
+}
+
+#ao_win_0 {
+    background-image: url("/resources/faces/bottom/ao_win_0.svg");
+    
+    width: var(--face-size);
+    height: var(--face-size);
+}
+
+#ao_label_0 {
+    background-image: url("/resources/faces/bottom/ao_label_0.svg");
+    
+    width: var(--face-size);
+    height: var(--face-size);
+}
+
+#ao_tsurikawa_0 {
+    background-image: url("/resources/faces/bottom/ao_tsurikawa_0.svg");
+
+    width: var(--face-size);
+    height: var(--face-size);
+
+    animation: ao_tsurikawa_move 2s ease-in-out infinite;
+}
+
+#ao_chair_0 {
+    background-image: url("/resources/faces/bottom/ao_chair_0.svg");
+    background-size: 70%;
+    background-position-y: -3.2rem;
+    
+    width: var(--face-size);
+    height: var(--face-size);
+}
+
+@keyframes ao_bg_move {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position-x: -20rem;
+    }
+}
+
+@keyframes ao_tsurikawa_move {
+    0% {
+        transform: translateX(4.3rem) translateY(-10rem) rotate(1deg);
+    }
+    50% {
+        transform: translateX(4.3rem) translateY(-10rem) rotate(4deg);
+    }
+    100% {
+        transform: translateX(4.3rem) translateY(-10rem) rotate(1deg);
+    }
+}

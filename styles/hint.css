@@ -1,0 +1,21 @@
+#hint {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+    padding-bottom: 10rem;
+
+    width: 60vw;
+    height: 100vh;
+
+    user-select: none;
+    pointer-events: none;
+
+    font-size: 1.1rem;
+    text-align: center;
+    color: white;
+
+    opacity: .6;
+}
