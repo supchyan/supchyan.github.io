@@ -31,10 +31,7 @@
     width: calc(var(--face-size) / 1.5);
     height: calc(var(--face-size) / 1.5);
 
-    animation-name: dt_flower_0_move; 
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: dt_flower_0_move 5s linear infinite;
 }
 
 #dt_line_area {
@@ -50,10 +47,7 @@
 
     background-size: 50%;
 
-    animation-name: dt_line_0_move; 
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: dt_line_0_move 5s linear infinite;
 }
 
 #dt_label_area {

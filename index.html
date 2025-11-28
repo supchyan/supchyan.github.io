@@ -1,145 +1,160 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>[ / ]</title>
+        <title>git/supchyan</title>
         <link rel="icon" href="/" />
-        <link rel="stylesheet" href="./styles/main.css" />
-        <link rel="stylesheet" href="./styles/hint.css" />
-        <link rel="stylesheet" href="./styles/cube.css" />
-        <link rel="stylesheet" href="./styles/cube_top.css" />
-        <link rel="stylesheet" href="./styles/cube_front.css" />
-        <link rel="stylesheet" href="./styles/cube_right.css" />
-        <link rel="stylesheet" href="./styles/cube_left.css" />
-        <link rel="stylesheet" href="./styles/cube_back.css" />
-        <link rel="stylesheet" href="./styles/cube_bottom.css" />
+        <link rel="stylesheet" href="/styles/main.css" />
+        <link rel="stylesheet" href="/styles/scene.css" />
+        <link rel="stylesheet" href="/styles/hint.css" />
+        <link rel="stylesheet" href="/styles/monologue.css" />
+        <link rel="stylesheet" href="/styles/cube.css" />
+        <link rel="stylesheet" href="/styles/cube_top.css" />
+        <link rel="stylesheet" href="/styles/cube_front.css" />
+        <link rel="stylesheet" href="/styles/cube_right.css" />
+        <link rel="stylesheet" href="/styles/cube_left.css" />
+        <link rel="stylesheet" href="/styles/cube_back.css" />
+        <link rel="stylesheet" href="/styles/cube_bottom.css" />
     </head>
     <body oncontextmenu="return false">
-        <div id="cube">
-            <div class="face top">
-                <div class="content_top">
-                    <div id="s_area">
-                        <div class="cell_top" id="s_0"></div>
-                        <div class="cell_top" id="s_1"></div>
-                    </div>
-                    <div id="u_area">
-                        <div class="cell_top" id="u_0"></div>
-                        <div class="cell_top" id="u_1"></div>
-                    </div>
-                    <div id="p_area">
-                        <div class="cell_top" id="p_0"></div>
-                        <div class="cell_top" id="p_1"></div>
-                    </div>
-                    <div id="c_area">
-                        <div class="cell_top" id="c_0"></div>
-                        <div class="cell_top" id="c_1"></div>
-                    </div>
-                    <div id="h_area">
-                        <div class="cell_top" id="h_0"></div>
-                        <div class="cell_top" id="h_1"></div>
-                        <div class="cell_top" id="h_2"></div>
-                    </div>
-                    <div id="y_area">
-                        <div class="cell_top" id="y_0"></div>
-                        <div class="cell_top" id="y_1"></div>
-                    </div>
-                    <div id="a_area">
-                        <div class="cell_top" id="a_0"></div>
-                        <div class="cell_top" id="a_1"></div>
-                    </div>
-                    <div id="n_area">
-                        <div class="cell_top" id="n_0"></div>
-                        <div class="cell_top" id="n_1"></div>
-                    </div>
-                    <div id="o_area">
-                        <div class="cell_top" id="o_0"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="face bottom">
-                <div class="content_bottom">
-                    <div class="ao_sprite" id="ao_bg_0"></div>
-                    <div class="ao_sprite" id="ao_bg_1"></div>
-                    <div class="ao_sprite" id="ao_bg_2"></div>
-                    <div class="ao_sprite" id="ao_win_0"></div>
-                    <div class="ao_sprite" id="ao_label_0"></div>
-                    <div class="ao_sprite" id="ao_tsurikawa_0"></div>
-                    <div class="ao_sprite" id="ao_chair_0"></div>
-                </div>
-            </div>
-            <div class="face left">
-                <div class="content_left">
-                    <div class="lb_flowers_area">
-                        <div class="cell_left lb_flowers" id="lb_flowers_1"></div>
-                    </div>
-                    <div class="lb_flowers_area">
-                        <div class="cell_left lb_flowers" id="lb_flowers_0"></div>
-                    </div>
-                    <div id="lb_label_area">
-                        <div class="cell_left" id="lb_label_0"></div>
+        <div id="scene">
+            <div id="cube">
+                <div id="cube_top" class="face top">
+                    <div class="content_top">
+                        <div id="s_area">
+                            <div class="cell_top" id="s_0"></div>
+                            <div class="cell_top" id="s_1"></div>
+                        </div>
+                        <div id="u_area">
+                            <div class="cell_top" id="u_0"></div>
+                            <div class="cell_top" id="u_1"></div>
+                        </div>
+                        <div id="p_area">
+                            <div class="cell_top" id="p_0"></div>
+                            <div class="cell_top" id="p_1"></div>
+                        </div>
+                        <div id="c_area">
+                            <div class="cell_top" id="c_0"></div>
+                            <div class="cell_top" id="c_1"></div>
+                        </div>
+                        <div id="h_area">
+                            <div class="cell_top" id="h_0"></div>
+                            <div class="cell_top" id="h_1"></div>
+                            <div class="cell_top" id="h_2"></div>
+                        </div>
+                        <div id="y_area">
+                            <div class="cell_top" id="y_0"></div>
+                            <div class="cell_top" id="y_1"></div>
+                        </div>
+                        <div id="a_area">
+                            <div class="cell_top" id="a_0"></div>
+                            <div class="cell_top" id="a_1"></div>
+                        </div>
+                        <div id="n_area">
+                            <div class="cell_top" id="n_0"></div>
+                            <div class="cell_top" id="n_1"></div>
+                        </div>
+                        <div id="o_area">
+                            <div class="cell_top" id="o_0"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="face front">
-                <div class="content_front">
-                    <div id="dt_flower_area">
-                        <div class="cell_front" id="dt_flower_0"></div>
-                    </div>
-                    <div id="dt_line_area">
-                        <div class="cell_front" id="dt_line_0"></div>
-                    </div>
-                    <div id="dt_label_area">
-                        <div class="cell_front" id="dt_label_0"></div>
+                <div id="cube_bottom" class="face bottom">
+                    <div class="content_bottom">
+                        <div class="ao_sprite" id="ao_bg_0"></div>
+                        <div class="ao_sprite" id="ao_bg_1"></div>
+                        <div class="ao_sprite" id="ao_bg_2"></div>
+                        <div class="ao_sprite" id="ao_win_0"></div>
+                        <div class="ao_sprite" id="ao_label_0"></div>
+                        <div class="ao_sprite" id="ao_tsurikawa_0"></div>
+                        <div class="ao_sprite" id="ao_chair_0"></div>
                     </div>
                 </div>
-            </div>
-            <div class="face right">
-                <div class="content_right">
-                    <div class="ka_spirits_area">
-                        <div class="cell_right ka_spirits" id="ka_spirits_bg_0"></div>
-                    </div>
-                    <div class="ka_spirits_area">
-                        <div class="cell_right ka_spirits" id="ka_spirits_bg_1"></div>
-                    </div>
-                    <div class="ka_spirits_area">
-                        <div class="cell_right ka_spirits" id="ka_spirits_0"></div>
-                    </div>
-                    <div id="ka_label_area">
-                        <div class="cell_right" id="ka_label_0"></div>
+                <div id="cube_left" class="face left">
+                    <div class="content_left">
+                        <div class="lb_flowers_area">
+                            <div class="cell_left lb_flowers" id="lb_flowers_1"></div>
+                        </div>
+                        <div class="lb_flowers_area">
+                            <div class="cell_left lb_flowers" id="lb_flowers_0"></div>
+                        </div>
+                        <div id="lb_label_area">
+                            <div class="cell_left" id="lb_label_0"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="face back">
-                <div class="content_back">
-                    <div id="mp_grabber_area">
-                        <div class="cell_back" id="mp_grabber_0"></div>
-                        <div class="mp_grid_bg_0"></div>
-                        <div class="mp_grid_bg_1"></div>
+                <div id="cube_right" class="face right">
+                    <div class="content_right">
+                        <div class="ka_spirits_area">
+                            <div class="cell_right ka_spirits" id="ka_spirits_bg_0"></div>
+                        </div>
+                        <div class="ka_spirits_area">
+                            <div class="cell_right ka_spirits" id="ka_spirits_bg_1"></div>
+                        </div>
+                        <div class="ka_spirits_area">
+                            <div class="cell_right ka_spirits" id="ka_spirits_0"></div>
+                        </div>
+                        <div id="ka_label_area">
+                            <div class="cell_right" id="ka_label_0"></div>
+                        </div>
                     </div>
-                    <div id="mp_lamp_area">
-                        <div class="mp_cell_bg" id="mp_lamp_bg"></div>
-                        <div class="cell_back" id="mp_lamp_0"></div>
+                </div>
+                <div id="cube_front" class="face front">
+                    <div class="content_front">
+                        <div id="dt_flower_area">
+                            <div class="cell_front" id="dt_flower_0"></div>
+                        </div>
+                        <div id="dt_line_area">
+                            <div class="cell_front" id="dt_line_0"></div>
+                        </div>
+                        <div id="dt_label_area">
+                            <div class="cell_front" id="dt_label_0"></div>
+                        </div>
                     </div>
-                    <div id="mp_flower_area">
-                        <div class="mp_cell_bg"></div>
-                        <div class="cell_back" id="mp_flower_0"></div>
-                    </div>
-                    <div id="mp_wave_area">
-                        <div class="cell_back mp_wave" id="mp_wave_0"></div>
-                        <div class="cell_back mp_wave" id="mp_wave_1"></div>
-                        <div class="cell_back mp_wave" id="mp_wave_2"></div>
-                        <div class="cell_back mp_wave" id="mp_wave_3"></div>
-                        <div class="mp_grid_bg_0"></div>
-                        <div class="mp_grid_bg_1"></div>
-                    </div>
-                    <div id="mp_label_area">
-                        <div class="cell_back" id="mp_label_0"></div>
+                </div>
+                <div id="cube_back" class="face back">
+                    <div class="content_back">
+                        <div id="mp_grabber_area">
+                            <div class="cell_back" id="mp_grabber_0"></div>
+                            <div class="mp_grid_bg_0"></div>
+                            <div class="mp_grid_bg_1"></div>
+                        </div>
+                        <div id="mp_lamp_area">
+                            <div class="mp_cell_bg" id="mp_lamp_bg"></div>
+                            <div class="cell_back" id="mp_lamp_0"></div>
+                        </div>
+                        <div id="mp_flower_area">
+                            <div class="mp_cell_bg"></div>
+                            <div class="cell_back" id="mp_flower_0"></div>
+                        </div>
+                        <div id="mp_wave_area">
+                            <div class="cell_back mp_wave" id="mp_wave_0"></div>
+                            <div class="cell_back mp_wave" id="mp_wave_1"></div>
+                            <div class="cell_back mp_wave" id="mp_wave_2"></div>
+                            <div class="cell_back mp_wave" id="mp_wave_3"></div>
+                            <div class="mp_grid_bg_0"></div>
+                            <div class="mp_grid_bg_1"></div>
+                        </div>
+                        <div id="mp_label_area">
+                            <div class="cell_back" id="mp_label_0"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        
         <div class="pre_line" id="hint"></div>
-        <script src="./scripts/TextLoader.js"></script>
-        <script src="./scripts/CubeManager.js"></script>
-        <script src="./scripts/Main.js"></script>
+        <div id="monologue">
+            <div class="pre_line" id="mono_content"></div>
+            <div id="mono_footer">
+                <div class="mono_footer_child button" id="mono_close_btn"></div>
+                <div class="mono_footer_child" id="mono_title"></div>
+                <div class="mono_footer_child button" id="mono_scroll_btn"></div>
+            </div>
+        </div>
+
+        <script src="/scripts/TextLoader.js"></script>
+        <script src="/scripts/CubeManager.js"></script>
+        <script src="/scripts/MonologueController.js"></script>
+        <script src="/scripts/Main.js"></script>
     </body>
 </html>

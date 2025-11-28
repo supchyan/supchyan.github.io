@@ -37,26 +37,15 @@
     background-size: 200%;
     background-position-y: -0.5rem;
 
-    animation-name: ka_spirits_0_move; 
-    animation-duration: 7s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: ka_spirits_0_move 7s linear infinite;
 }
 #ka_spirits_bg_0 {
     background-image: url("/resources/faces/right/ka_spirits_bg_0.svg");
-
-    animation-name: ka_spirits_bg_0_move; 
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: cubic-bezier(0,.1,0,1);
+    animation: ka_spirits_bg_0_move 3s cubic-bezier(0,.1,0,1) infinite;
 }
 #ka_spirits_bg_1 {
     background-image: url("/resources/faces/right/ka_spirits_bg_1.svg");
-    
-    animation-name: ka_spirits_bg_1_move; 
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: cubic-bezier(0,.1,0,1);
+    animation: ka_spirits_bg_1_move 3s cubic-bezier(0,.1,0,1) infinite;
 }
 
 #ka_label_area {

@@ -36,10 +36,7 @@
 
     background-size: 33%;
 
-    animation-name: lb_flowers_0_move; 
-    animation-duration: 7s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: lb_flowers_0_move 7s linear infinite;
 }
 #lb_flowers_1 {
     background-image: url("/resources/faces/left/lb_flowers_1.svg");
@@ -48,10 +45,7 @@
 
     opacity: 10%;
 
-    animation-name: lb_flowers_1_move; 
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: lb_flowers_1_move 10s linear infinite;
 }
 
 #lb_label_area {

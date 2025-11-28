@@ -5,6 +5,7 @@
     display: grid;
 
     gap: 0;
+    
     grid-template-columns: calc(var(--face-size) / 3) calc(var(--face-size) / 3) calc(var(--face-size) / 3);
     grid-template-rows: calc(var(--face-size) / 3) calc(var(--face-size) / 3) calc(var(--face-size) / 3);
     grid-template-areas: 
@@ -19,18 +20,17 @@
 
 .cell_top {
     position: absolute;
+
     width: calc(var(--face-size) / 3);
     height: calc(var(--face-size) / 3);
+
     background-repeat: no-repeat;
     background-position: center;
     background-size: 99%;
 
     opacity: 20%;
 
-    animation-name: cell_blink;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-    animation-duration: 300ms;
+    animation: cell_blink 300ms ease-in-out forwards;
 
     filter: drop-shadow(0rem 0rem 0rem #fff);
 }
@@ -140,10 +140,7 @@
 }
 #o_0 {
     background-image: url("/resources/faces/top/o_0.svg");
-    animation-name: o_blink;
-    animation-timing-function: cubic-bezier(0, .96, 0, .96);
-    animation-iteration-count: infinite;
-    animation-duration: 2s;
+    animation: o_blink 2s cubic-bezier(0, .96, 0, .96) infinite;
     animation-delay: 2s;
 }
 

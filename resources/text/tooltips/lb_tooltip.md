@@ -1,0 +1,1 @@
+Status bar lib for Windows written in C#.

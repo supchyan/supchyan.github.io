@@ -1,8 +1,7 @@
 class CubeManager {
     constructor() {
-        // true on page load, false after `start_delay` passed, 
-        // so the cube is ready to be controlled
-        this.locked = true;
+        // whenever cube can be controlled by a user.
+        this.locked = false;
 
         // whenever the cube is controllable
         this.controllable = false; 
@@ -44,27 +43,37 @@ class CubeManager {
     }
 
     init(cube) {
-        setInterval(() => {
-            if (this.locked) {
-                if (Date.now() - this.old_time > this.start_delay) { // wait for 2 seconds before start
-                    this.locked = false;
+        this.lock(); // prevent cube from being controlled on init
+        setTimeout(() => { // wait for 2s before begin
+            this.unlock(); // release cube lock
+            setInterval(() => {
+                var dist_vec = { X: this.target_vec.X - this.cube_vec.X, Y: this.target_vec.Y - this.cube_vec.Y };
+
+                this.cube_vec.X += (dist_vec.X * 0.06);
+                this.cube_vec.Y += (dist_vec.Y * 0.06);
+
+                if (this.cube_vec.Y > 90) this.cube_vec.Y = 90;
+                if (this.cube_vec.Y < -90) this.cube_vec.Y = -90;
+
+                if(!this.controllable) {
+                    this.old_vec = { X: this.cube_vec.X, Y: this.cube_vec.Y };
                 }
-                return;
-            }
-            
-            var dist_vec = { X: this.target_vec.X - this.cube_vec.X, Y: this.target_vec.Y - this.cube_vec.Y };
 
-            this.cube_vec.X += (dist_vec.X * 0.06);
-            this.cube_vec.Y += (dist_vec.Y * 0.06);
+                cube.style.transform = `rotateX(${-this.cube_vec.Y}deg) rotateY(${this.cube_vec.X}deg)`;
+            }, 1);
+        }, 2000);
+    }
 
-            if (this.cube_vec.Y > 90) this.cube_vec.Y = 90;
-            if (this.cube_vec.Y < -90) this.cube_vec.Y = -90;
-
-            if(!this.controllable) {
-                this.old_vec = { X: this.cube_vec.X, Y: this.cube_vec.Y };
-            }
-
-            cube.style.transform = `rotateX(${-this.cube_vec.Y}deg) rotateY(${this.cube_vec.X}deg)`;
-        }, 1);
+    /**
+     * Locks the cube from being controlled by a user.
+     */
+    lock() {
+        this.locked = true;
+    }
+    /**
+     * Unlocks the cube to make it controllable by a user.
+     */
+    unlock() {
+        this.locked = false;
     }
 }

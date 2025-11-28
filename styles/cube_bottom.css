@@ -18,10 +18,7 @@
     width: var(--face-size);
     height: var(--face-size);
 
-    animation-name: ao_bg_move; 
-    animation-duration: .3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: ao_bg_move .3s linear infinite;
 }
 #ao_bg_1 {
     background-image: url("/resources/faces/bottom/ao_bg_1.svg");
@@ -31,10 +28,7 @@
 
     opacity: .5;
 
-    animation-name: ao_bg_move; 
-    animation-duration: .4s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: ao_bg_move .4s linear infinite;
 }
 #ao_bg_2 {
     background-image: url("/resources/faces/bottom/ao_bg_2.svg");
@@ -44,10 +38,7 @@
 
     opacity: .2;
 
-    animation-name: ao_bg_move; 
-    animation-duration: .5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: ao_bg_move .5s linear infinite;
 }
 
 #ao_win_0 {
@@ -70,11 +61,7 @@
     width: var(--face-size);
     height: var(--face-size);
 
-    animation-name: ao_tsurikawa_move; 
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-
+    animation: ao_tsurikawa_move 2s ease-in-out infinite;
 }
 
 #ao_chair_0 {

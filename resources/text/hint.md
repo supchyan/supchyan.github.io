@@ -1,1 +1,0 @@
-HINT: You can read bunch of stories about my projects, rotating this cube and clicking on the project's related cube face.

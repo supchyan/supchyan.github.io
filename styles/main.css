@@ -1,6 +1,7 @@
 :root {
     --face-size: 20rem;
     --face-color: #2d2d2d;
+    --bg-color: #111;
 }
 
 @font-face {
@@ -25,7 +26,7 @@ body {
 
     user-select: none;
 
-    background-color: #111;
+    background-color: var(--bg-color);
 
     font-family: "dotgothic16";
 
@@ -37,6 +38,15 @@ body {
 
 .pre_line { /* for text elements with line breaks. */
     white-space: pre-line;
+}
+
+.button {
+    transition: all 60ms;
+}
+
+.button:hover {
+    opacity: .5;
+    cursor: pointer;
 }
 
 @keyframes body_show {
