@@ -8,8 +8,8 @@
 
     display: flex;
 
-    align-items: end;
-    justify-content: end;
+    align-items: center;
+    justify-content: center;
 
     box-sizing: border-box;
 
@@ -30,7 +30,7 @@
     animation: load_bg_move 6s linear infinite;
 }
 #load_text {
-    position: absolute;
+    position: var(--load-text-pos-state);
 
     right: 0;
     bottom: 3rem;
@@ -38,10 +38,12 @@
     width: 30rem;
     height: 3rem;
 
+    scale: var(--load-text-scale);
+
     background-size: 70%;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url("/resources/misc/load_text.svg");
+    background-image: var(--load-text-url);
 
     animation: load_text_blink 3s ease-in-out infinite;
 }

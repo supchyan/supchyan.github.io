@@ -18,6 +18,9 @@ const textLoader = new TextLoader();
 // Cube manager instance
 const cubeManager = new CubeManager();
 
+// Platform manager instance
+const platformManager = new PlatformManager();
+
 // Monologue controller instance
 const monoController = new MonologueController(cubeManager);
 
@@ -65,6 +68,9 @@ function registerEvents(element, tooltip, monologue_title = null, monologue = nu
         }, 10);
     }
 }
+
+// setup platform stuff
+platformManager.init();
 
 document.onreadystatechange = () => {
     if (document.readyState == "complete") {
