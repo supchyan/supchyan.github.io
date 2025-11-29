@@ -1,7 +1,15 @@
 :root {
+    --font-size: 1.1rem;
     --face-size: 20rem;
+
     --face-color: #2d2d2d;
     --bg-color: #111;
+
+    --scene-offset-y: 0;
+    
+    --load-text-scale: 1;
+    --load-text-pos-state: absolute;
+    --load-text-url: url("/resources/misc/load_text.svg");
 }
 
 @font-face {
@@ -29,11 +37,6 @@ body {
     background-color: var(--bg-color);
 
     font-family: "dotgothic16";
-
-    animation-name: body_show;
-    animation-duration: 1s;
-    animation-timing-function: cubic-bezier(.1,.5,.1,1);
-    animation-fill-mode: forwards;
 }
 
 .pre_line { /* for text elements with line breaks. */
@@ -47,15 +50,4 @@ body {
 .button:hover {
     opacity: .5;
     cursor: pointer;
-}
-
-@keyframes body_show {
-    from {
-        scale: 0.95;
-        opacity: 0;
-    }
-    to {
-        scale: 1;
-        opacity: 1;
-    }
 }

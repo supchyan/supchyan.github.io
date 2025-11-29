@@ -7,33 +7,7 @@
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 0rem;
+    margin-bottom: var(--scene-offset-y);
 
     transition: all 220ms;
-}
-
-@media screen and (max-width: 50rem) {
-    #scene {
-        scale: .7;
-        margin-bottom: 10rem;
-    }
-}
-
-@media screen and (max-width: 30rem) {
-    #scene {
-        scale: .6;
-        margin-bottom: 13rem;
-    }
-}
-
-@media screen and (max-height: 50rem) {
-    #scene {
-        scale: .7;
-    }
-}
-
-@media screen and (max-height: 30rem) {
-    #scene {
-        scale: .6;
-    }
 }

@@ -14,7 +14,7 @@
 
     background-color: var(--bg-color);
 
-    font-size: 1.1rem;
+    font-size: var(--font-size);
 
     padding: 2rem;
     box-sizing: border-box;
