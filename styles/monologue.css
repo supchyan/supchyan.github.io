@@ -74,6 +74,8 @@
     flex-direction: row;
 
     align-items: center;
+
+    margin-bottom: var(--mono-footer-margin-bottom);
 }
 
 .mono_footer_child + .mono_footer_child {
@@ -99,6 +101,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    visibility: var(--mono-title-visibility);
 }
 #mono_title:hover {
     cursor: no-drop;
