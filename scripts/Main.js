@@ -18,16 +18,16 @@ const textLoader = new TextLoader();
 // Cube manager instance
 const cubeManager = new CubeManager();
 
-// Monologue manager instance
+// Monologue controller instance
 const monoController = new MonologueController(cubeManager);
 
-// init a new cube manager
-cubeManager.init(cube);
+// Cube top face controller instance
+const ctfController = new CubeTopFaceController();
 
-var isClickable = false;
+var is_clickable = false; // whenever cube face is clickable
 
-var down_client_vec = { X: 0, Y: 0 };
-var up_client_vec   = { X: 0, Y: 0 };
+var down_client_vec = { X: 0, Y: 0 }; // pointer position on down invoked
+var up_client_vec   = { X: 0, Y: 0 }; // pointer position on up invoked
 
 // Registers events for specified cube face element
 function registerEvents(element, tooltip, monologue_title = null, monologue = null) {
@@ -49,40 +49,53 @@ function registerEvents(element, tooltip, monologue_title = null, monologue = nu
     }
 
     element.onpointerenter = () => {
-        isClickable = false;
+        is_clickable = false;
         textLoader.load(`/tooltips/${tooltip}`, hint, 10);
     }
     element.onpointerleave = () => {
-        isClickable = true; // set show hint flag
+        is_clickable = true; // set show hint flag
 
         setTimeout(() => { 
-            if (isClickable) { // if show hint flag is still `true` (i. e. nothing hovered after some delay), show hint tooltip.
+            if (is_clickable) { // if show hint flag is still `true` (i. e. nothing hovered after some delay), show hint tooltip.
                 textLoader.load("/tooltips/hint_tooltip.md", hint, 10);
             }
         }, 100);
     }
 }
 
-// wait for `2s` to let cube appear
-setTimeout(() => {  
-    // load hint text
-    textLoader.load("/tooltips/hint_tooltip.md", hint, 10);
+document.onreadystatechange = () => {
+    if (document.readyState == "complete") {
+        // hide loading screen
+        document.getElementById("loading").style.opacity = "0";
 
-    // --- CLICK EVENTS ---
+        setTimeout(() => { // hide loading screen to enable pointer events on cube
+            document.getElementById("loading").style.visibility = "collapse";
+        }, 500); // 500ms, because loading screen has the same time transition length
 
-    // logo
-    registerEvents(cube_top, "logo_tooltip.md");
-    // aeno
-    registerEvents(cube_bottom, "ao_tooltip.md", "aeno", "ao_mono.md");
-    // lolibar
-    registerEvents(cube_left, "lb_tooltip.md", "lolibar", "lb_mono.md");
-    // kimiavatars
-    registerEvents(cube_right, "ka_tooltip.md", "kimiavatars", "ka_mono.md");
-    // de_things
-    registerEvents(cube_front, "dt_tooltip.md", "de:things", "dt_mono.md");
-    // m_project
-    registerEvents(cube_back, "mp_tooltip.md", "m:project", "mp_mono.md");
+        // init a new cube manager
+        cubeManager.init(cube);
 
-    // ---
+        ctfController.startSegmentsAnimation();
 
-}, 2000);
+        // wait for `2s` to let cube appear
+        setTimeout(() => {
+            // load hint text
+            textLoader.load("/tooltips/hint_tooltip.md", hint, 10);
+
+            // set click events for cube faces.
+            // i set it here, because i want to prevent 
+            // some tooltip drawing logic 
+            // before cube has finished it's `init()` job
+            registerEvents(cube_top, "logo_tooltip.md");                                // logo
+            registerEvents(cube_bottom, "ao_tooltip.md", "aeno", "ao_mono.md");         // aeno
+            registerEvents(cube_left, "lb_tooltip.md", "lolibar", "lb_mono.md");        // lolibar
+            registerEvents(cube_right, "ka_tooltip.md", "kimiavatars", "ka_mono.md");   // kimiavatars
+            registerEvents(cube_front, "dt_tooltip.md", "de:things", "dt_mono.md");     // de_things
+            registerEvents(cube_back, "mp_tooltip.md", "m:project", "mp_mono.md");      // m_project
+            
+            // start "O" thing blinking animation
+            ctfController.startOBlinkAnimation();
+        
+        }, 2000);
+    }
+}

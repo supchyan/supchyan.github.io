@@ -28,11 +28,13 @@
     background-position: center;
     background-size: 99%;
 
-    opacity: 20%;
+    opacity: .2;
 
-    animation: cell_blink 300ms ease-in-out forwards;
 
     filter: drop-shadow(0rem 0rem 0rem #fff);
+}
+.cell_top_blink {
+    animation: cell_top_blink 300ms ease-in-out forwards;
 }
 
 #s_area {
@@ -140,33 +142,34 @@
 }
 #o_0 {
     background-image: url("/resources/faces/top/o_0.svg");
-    animation: o_blink 2s cubic-bezier(0, .96, 0, .96) infinite;
-    animation-delay: 2s;
+}
+.o_0_blink {
+    animation: o_top_blink 2s cubic-bezier(0, .96, 0, .96) infinite;
 }
 
-@keyframes cell_blink {
+@keyframes cell_top_blink {
     0% {
-        opacity: 20%;
+        opacity: .2;
     }
     20% {
-        opacity: 60%;
+        opacity: .6;
     }
     60% {
-        opacity: 20%;
+        opacity: .2;
     }
     100% {
-        opacity: 100%;
+        opacity: 1;
     }
 }
 
-@keyframes o_blink {
+@keyframes o_top_blink {
     0% {
-        opacity: 20%;
+        opacity: .2;
     }
     50% {
-        opacity: 100%;
+        opacity: 1;
     }
     100% {
-        opacity: 20%;
+        opacity: .2;
     }
 }
