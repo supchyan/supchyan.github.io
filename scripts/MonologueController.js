@@ -21,23 +21,24 @@ class MonologueController {
      */
     show(contentPath, title) {
         this.textLoader.load(contentPath, document.getElementById("mono_content"), 10);
-        document.getElementById("mono_title").innerHTML = title;
+        document.getElementById("mono_title").innerHTML = title; // set monologue GUI title
         
-        setTimeout(() => { // wait before old data in text loader clear itself.
-            document.getElementById("monologue").style.opacity = ".9";
-            document.getElementById("monologue").style.pointerEvents = "all";
-            this.#setScrollButtonText();
-        }, 10);
+        document.getElementById("monologue").style.opacity = ".9"; // show monologue GUI
+        document.getElementById("monologue").style.pointerEvents = "all"; // add pointer events
+        this.#setScrollButtonText();
 
-        this.cubeManager.lock();
+        this.cubeManager.lock(); // lock cube interactions
     }
     /**
      * Closes monologue GUI.
      */
     close() {
-        document.getElementById("monologue").style.opacity = "0";
-        document.getElementById("monologue").style.pointerEvents = "none";
-        this.cubeManager.unlock();
+        this.textLoader.stop(); // stop old monologue filling job
+        document.getElementById("mono_content").innerHTML = ""; // clear old monologue content
+
+        document.getElementById("monologue").style.opacity = "0"; // hide monologue GUI
+        document.getElementById("monologue").style.pointerEvents = "none"; // remove pointer events
+        this.cubeManager.unlock(); // unlock cube interactions
     }
     /**
      * Defines state for the auto scroll button.

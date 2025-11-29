@@ -1,6 +1,5 @@
 class TextLoader {
     constructor() {
-        this.isStopped = false;
         this.isFilling = false;
         this.isAutoScrolling = true;
         this.fillInterval;
@@ -8,10 +7,7 @@ class TextLoader {
     
     // Fills element with a text like in videogames!
     #fill(str, textElement, fillDelay) {
-        if (this.isFilling) {
-            clearInterval(this.fillInterval);
-            this.isFilling = false;
-        }
+        this.stop();
 
         this.isFilling = true;
         this.isAutoScrolling = true;
@@ -59,12 +55,25 @@ class TextLoader {
             }
         });
     }
+
+    /**
+     * Stops text filling job if exists.
+     */
+    stop() {
+        if (this.isFilling) {
+            // stop old fill logic to prevent text overflows
+            clearInterval(this.fillInterval);
+            this.isFilling = false;
+        }
+    }
+
     /**
      * Returns current auto-scroll state.
      */
     getAutoScroll() {
         return this.isAutoScrolling;
     }
+
     /**
      * Sets text fill auto-scroll state whenever it's needed.
      */

@@ -24,7 +24,7 @@ const monoController = new MonologueController(cubeManager);
 // Cube top face controller instance
 const ctfController = new CubeTopFaceController();
 
-var is_clickable = false; // whenever cube face is clickable
+var is_pointer_entered = false; // whenever pointer is inside a cube face
 
 var down_client_vec = { X: 0, Y: 0 }; // pointer position on down invoked
 var up_client_vec   = { X: 0, Y: 0 }; // pointer position on up invoked
@@ -49,17 +49,20 @@ function registerEvents(element, tooltip, monologue_title = null, monologue = nu
     }
 
     element.onpointerenter = () => {
-        is_clickable = false;
+        is_pointer_entered = true;
         textLoader.load(`/tooltips/${tooltip}`, hint, 10);
     }
     element.onpointerleave = () => {
-        is_clickable = true; // set show hint flag
+        is_pointer_entered = false;
 
-        setTimeout(() => { 
-            if (is_clickable) { // if show hint flag is still `true` (i. e. nothing hovered after some delay), show hint tooltip.
+        setTimeout(() => {
+            // this check is needed in a case when user swaps pointer focus between faces
+            // so it waits for `10ms` expecting to user's face focus event, 
+            // shows a hint tooltip otherwise
+            if (!is_pointer_entered) { // if this flag is still `false`, show a hint tooltip
                 textLoader.load("/tooltips/hint_tooltip.md", hint, 10);
             }
-        }, 100);
+        }, 10);
     }
 }
 
