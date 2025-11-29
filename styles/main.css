@@ -5,11 +5,18 @@
     --face-color: #2d2d2d;
     --bg-color: #111;
 
-    --scene-offset-y: 0;
+    --scene-y-offset: 0;
     
     --load-text-scale: 1;
-    --load-text-pos-state: absolute;
+    --load-text-height: 3rem;
+
+    --load-text-position-set: absolute;
     --load-text-url: url("/resources/misc/load_text.svg");
+
+    --mono-footer-margin-bottom: 0;
+    --mono-title-visibility: visible;
+
+    --scene-scale: 1;
 }
 
 @font-face {

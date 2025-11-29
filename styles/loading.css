@@ -30,13 +30,13 @@
     animation: load_bg_move 6s linear infinite;
 }
 #load_text {
-    position: var(--load-text-pos-state);
+    position: var(--load-text-position-set);
 
     right: 0;
     bottom: 3rem;
 
     width: 30rem;
-    height: 3rem;
+    height: var(--load-text-height);
 
     scale: var(--load-text-scale);
 

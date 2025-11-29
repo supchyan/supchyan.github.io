@@ -7,7 +7,8 @@
     align-items: center;
     justify-content: center;
 
-    margin-bottom: var(--scene-offset-y);
+    margin-bottom: var(--scene-y-offset);
+    scale: var(--scene-scale);
 
     transition: all 220ms;
 }

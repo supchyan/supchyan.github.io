@@ -13,7 +13,7 @@
     user-select: none;
     pointer-events: none;
 
-    font-size: 1.1rem;
+    font-size: var(--font-size);
     text-align: center;
     color: white;
 
