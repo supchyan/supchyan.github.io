@@ -13,7 +13,6 @@ class PlatformManager {
             navigator.platform.includes("iPhone")
         ) {
             this.root.style.setProperty("--load-text-height", "6rem");
-            this.root.style.setProperty("--load-text-scale", "1.6");
             this.root.style.setProperty("--load-text-position-set", "static");
             this.root.style.setProperty("--load-text-url", `url("/resources/misc/load_text_compact.svg")`);
             
@@ -27,7 +26,6 @@ class PlatformManager {
         }
         else {
             this.root.style.setProperty("--load-text-height", "3rem");
-            this.root.style.setProperty("--load-text-scale", "1");
             this.root.style.setProperty("--load-text-position-set", "absolute");
             this.root.style.setProperty("--load-text-url", `url("/resources/misc/load_text.svg")`);
 
