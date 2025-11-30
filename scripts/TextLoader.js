@@ -21,8 +21,8 @@ class TextLoader {
             if (i < str.length) {
                 textElement.innerHTML += str[i];
                 if (this.isAutoScrolling) {
-                    textElement.scroll({
-                        top: textElement.offsetHeight,
+                    textElement.scrollBy({
+                        top: 9999,
                         behavior: "smooth",
                     });
                 }
@@ -42,15 +42,22 @@ class TextLoader {
      * @param {*} fillDelay Delay between characters to show. Less delay shows text faster.
      */
     load(input, textElement, fillDelay) {
+        textElement.classList.add("loading_blink"); // add waiting animation
+        textElement.innerHTML = "Connecting to server..."; // set some placeholder upon waiting for a server response
+
         fetch(`/resources/text/${input}`)
         .then(res => {
-            if (res.status == 200) { // fetch te
+            // remove waiting animation
+            textElement.classList.remove("loading_blink");
+            textElement.offsetWidth;
+
+            if (res.status == 200) {
                 res.text().then((data) => {
                     // Fill with a new content
                     this.#fill(data, textElement, fillDelay);
                 });
             }
-            else {
+            else { // fill text with a file path, since not found or something
                 this.#fill(input, textElement, fillDelay);
             }
         });

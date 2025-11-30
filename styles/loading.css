@@ -44,10 +44,13 @@
     background-position: center;
     background-repeat: no-repeat;
     background-image: var(--load-text-url);
-
-    animation: load_text_blink 3s ease-in-out infinite;
 }
-@keyframes load_text_blink {
+
+.loading_blink {
+    animation: loading_blink 3s ease-in-out infinite;
+}
+
+@keyframes loading_blink {
     0% {
         opacity: .8;
     }
@@ -58,6 +61,7 @@
         opacity: .8;
     }
 }
+
 @keyframes load_bg_move {
     0% {
         background-position: 0 0;
