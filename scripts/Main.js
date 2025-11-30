@@ -32,6 +32,9 @@ var is_pointer_entered = false; // whenever pointer is inside a cube face
 var down_client_vec = { X: 0, Y: 0 }; // pointer position on down invoked
 var up_client_vec   = { X: 0, Y: 0 }; // pointer position on up invoked
 
+// initialize a platform manager
+platformManager.init();
+
 // Registers events for specified cube face element
 function registerEvents(element, tooltip, monologue_title = null, monologue = null) {
     element.onpointerdown = (ev) => {
@@ -53,7 +56,10 @@ function registerEvents(element, tooltip, monologue_title = null, monologue = nu
 
     element.onpointerenter = () => {
         is_pointer_entered = true;
-        textLoader.load(`/tooltips/${tooltip}`, hint, 10);
+
+        if (!platformManager.isPhonePlatform()) { // don't show tooltips on phones
+            textLoader.load(`/tooltips/${tooltip}`, hint, 10);
+        }
     }
     element.onpointerleave = () => {
         is_pointer_entered = false;
@@ -63,14 +69,13 @@ function registerEvents(element, tooltip, monologue_title = null, monologue = nu
             // so it waits for `10ms` expecting to user's face focus event, 
             // shows a hint tooltip otherwise
             if (!is_pointer_entered) { // if this flag is still `false`, show a hint tooltip
-                textLoader.load("/tooltips/hint_tooltip.md", hint, 10);
+                if (!platformManager.isPhonePlatform()) { // don't show tooltips on phones
+                    textLoader.load("/tooltips/hint_tooltip.md", hint, 10);
+                }
             }
         }, 10);
     }
 }
-
-// setup platform stuff
-platformManager.init();
 
 document.onreadystatechange = () => {
     if (document.readyState == "complete") {
