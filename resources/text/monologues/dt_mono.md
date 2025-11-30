@@ -10,4 +10,4 @@ It's kinda dumb, that modern IoT industry surrounded by global servers, prevents
 
 Home Assistant, you say. Too complicated for basic IoT interactions, I confront... As well as I want to use Ethernet as one of supported protocols for my setup. I live in country where you never know, what will happen tomorrow.
 
-De:things based on Arduino / ESP controllers community, so if you ever playied with Arduino and it's IDE, you can take a look this project on my GitHub. It has an open-source organization page for everyone. It's pretty simple and easy to get into, since I really want to just control my devices with requests over local network.
+De:things based on Arduino / ESP controllers community, so if you ever playied with Arduino and it's IDE, you can take a look at this project on my GitHub. It has an open-source organization page for everyone. It's pretty simple and easy to get into, since I really want to just control my devices with requests over local network.

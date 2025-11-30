@@ -16,7 +16,7 @@ class PlatformManager {
             this.is_phone = true;
 
             this.root.style.setProperty("--load-text-height", "6rem");
-            this.root.style.setProperty("--load-text-scale", ".6");
+            this.root.style.setProperty("--load-text-scale", ".8");
             this.root.style.setProperty("--load-text-position-set", "static");
             this.root.style.setProperty("--load-text-url", `url("/resources/misc/load_text_compact.svg")`);
             
