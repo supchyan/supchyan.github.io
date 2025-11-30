@@ -7,6 +7,7 @@
 
     --scene-y-offset: 0;
     
+    --load-text-scale: 1;
     --load-text-height: 3rem;
 
     --load-text-position-set: absolute;

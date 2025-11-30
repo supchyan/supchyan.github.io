@@ -38,6 +38,8 @@
     width: 30rem;
     height: var(--load-text-height);
 
+    scale: var(--load-text-scale);
+
     background-size: 70%;
     background-position: center;
     background-repeat: no-repeat;

@@ -13,6 +13,7 @@ class PlatformManager {
             navigator.platform.includes("iPhone")
         ) {
             this.root.style.setProperty("--load-text-height", "6rem");
+            this.root.style.setProperty("--load-text-scale", "0.6");
             this.root.style.setProperty("--load-text-position-set", "static");
             this.root.style.setProperty("--load-text-url", `url("/resources/misc/load_text_compact.svg")`);
             
@@ -21,11 +22,12 @@ class PlatformManager {
 
             this.root.style.setProperty("--font-size", "1.4rem");
 
-            this.root.style.setProperty("--mono-footer-margin-bottom", "2rem");
+            this.root.style.setProperty("--mono-footer-margin-bottom", "4rem");
             this.root.style.setProperty("--mono-title-visibility", "collapse");
         }
         else {
             this.root.style.setProperty("--load-text-height", "3rem");
+            this.root.style.setProperty("--load-text-scale", "1");
             this.root.style.setProperty("--load-text-position-set", "absolute");
             this.root.style.setProperty("--load-text-url", `url("/resources/misc/load_text.svg")`);
 
