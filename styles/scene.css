@@ -9,6 +9,4 @@
 
     margin-bottom: var(--scene-y-offset);
     scale: var(--scene-scale);
-
-    transition: all 220ms;
 }

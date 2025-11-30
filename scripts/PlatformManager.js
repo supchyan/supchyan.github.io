@@ -4,6 +4,7 @@
 class PlatformManager {
     constructor() { 
         this.root = document.documentElement;
+        this.is_phone = false;
     }
     init() {
         if (
@@ -12,15 +13,18 @@ class PlatformManager {
             navigator.userAgent.includes("iPhone")  ||
             navigator.platform.includes("iPhone")
         ) {
+            this.is_phone = true;
+
             this.root.style.setProperty("--load-text-height", "6rem");
-            this.root.style.setProperty("--load-text-scale", "0.6");
+            this.root.style.setProperty("--load-text-scale", ".6");
             this.root.style.setProperty("--load-text-position-set", "static");
             this.root.style.setProperty("--load-text-url", `url("/resources/misc/load_text_compact.svg")`);
             
-            this.root.style.setProperty("--scene-scale", ".8");
+            this.root.style.setProperty("--scene-scale", ".7");
             this.root.style.setProperty("--scene-y-offset", "10rem");
 
             this.root.style.setProperty("--font-size", "1.4rem");
+            this.root.style.setProperty("--hint-font-size", "1.3rem");
 
             this.root.style.setProperty("--mono-footer-margin-bottom", "4rem");
             this.root.style.setProperty("--mono-title-visibility", "collapse");
@@ -35,10 +39,18 @@ class PlatformManager {
             this.root.style.setProperty("--scene-y-offset", "0");
 
             this.root.style.setProperty("--font-size", "1.1rem");
+            this.root.style.setProperty("--hint-font-size", "1.1rem");
 
             this.root.style.setProperty("--mono-footer-margin-bottom", "0");
             this.root.style.setProperty("--mono-title-visibility", "visible");
             
         }
+    }
+    /**
+     * Returns `true` if current platform is mobile (i.e. Android or iPhone).
+     * @returns 
+     */
+    isPhonePlatform() {
+        return this.is_phone;
     }
 }
