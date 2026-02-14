@@ -22,6 +22,7 @@ class MonologueController {
     show(contentPath, title) {
         this.textLoader.load(contentPath, document.getElementById("mono_content"), 10);
         document.getElementById("mono_title").innerHTML = title; // set monologue GUI title
+        document.getElementById("mono_scroll_btn").innerHTML = "Auto scroll: On";
         
         document.getElementById("monologue").style.opacity = ".9"; // show monologue GUI
         document.getElementById("monologue").style.pointerEvents = "all"; // add pointer events
